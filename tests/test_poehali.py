@@ -5,8 +5,9 @@ from Fixtures.PoehaliFixture import PoehaliFixture
 
 @pytest.fixture
 def fix(request):
+    cmd_days = request.config.getoption("--days")
     browser = request.config.getoption("--browser")
-    fixture = PoehaliFixture(browser)
+    fixture = PoehaliFixture(browser, cmd_days)
     return fixture
 
 
