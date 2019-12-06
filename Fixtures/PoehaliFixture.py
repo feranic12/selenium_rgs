@@ -13,7 +13,6 @@ from Fixtures.Locators.PoehaliLocators import PoehaliLocators
 
 
 class PoehaliFixture(BaseFixture):
-
     def __init__(self, browser, cmd_days):
         target = r"https://testpartner.rgs.ru/b2c/product/build/test-voyage.html"
         self.days = cmd_days
