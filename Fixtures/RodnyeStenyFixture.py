@@ -38,8 +38,8 @@ class RodnyeStenyFixture(BaseFixture):
         element.click()
         element = driver.find_element(*RodnyeStenyLocators.Constr_Hidden)
         element.send_keys(Keys.ARROW_DOWN+Keys.ENTER)
-        #element = driver.find_element(*RodnyeStenyLocators.Buy_Premium_Button)
-        #element.click()
+        element = driver.find_element(*RodnyeStenyLocators.Buy_Premium_Button)
+        element.click()
 
     def registration(self):
         driver = self.driver
