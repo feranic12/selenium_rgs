@@ -34,8 +34,12 @@ class RodnyeStenyFixture(BaseFixture):
         element = driver.find_element(*RodnyeStenyLocators.Fire_Button)
         element.click()
         WebDriverWait(driver, 10).until(EC.element_to_be_clickable(RodnyeStenyLocators.Buy_Premium_Button))
-        element = driver.find_element(*RodnyeStenyLocators.Buy_Premium_Button)
+        element = driver.find_element(*RodnyeStenyLocators.Constr_Svg)
         element.click()
+        element = driver.find_element(*RodnyeStenyLocators.Constr_Hidden)
+        element.send_keys(Keys.ARROW_DOWN+Keys.ENTER)
+        #element = driver.find_element(*RodnyeStenyLocators.Buy_Premium_Button)
+        #element.click()
 
     def registration(self):
         driver = self.driver
