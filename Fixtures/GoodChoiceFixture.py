@@ -14,7 +14,7 @@ from Fixtures.Locators.GoodChoiceLocators import GoodChoiceLocators
 
 class GoodChoiceFixture:
     def __init__(self, browser):
-        target = r"https://avinfors.ru/denis_rgs2/b2c/product/build/test-goodChoiceB2B.html"
+        target = r"https://testpartner.rgs.ru/b2c/product/build/test-goodChoiceB2B.html"
         BaseFixture.__init__(self, browser, target)
 
     def open_page(self):
@@ -28,9 +28,10 @@ class GoodChoiceFixture:
 
     def insurance_object(self):
         driver = self.driver
-        WebDriverWait(driver,10).until(EC.element_to_be_clickable(GoodChoiceLocators.Button_Flat))
-        element = driver.find_element(*GoodChoiceLocators.Button_Flat)
-        element.click()
+        #WebDriverWait(driver,10).until(EC.element_to_be_clickable(GoodChoiceLocators.Button_Flat))
+        #element = driver.find_element(*GoodChoiceLocators.Button_Flat)
+        #element.click()
+        WebDriverWait(driver,10).until(EC.element_to_be_clickable(GoodChoiceLocators.Region_Input))
         element = driver.find_element(*GoodChoiceLocators.Region_Input)
         element.send_keys("город.Москва" + Keys.ENTER)
         element = driver.find_element(*GoodChoiceLocators.City)
@@ -71,20 +72,20 @@ class GoodChoiceFixture:
         element.send_keys("1234")
         element = driver.find_element(*GoodChoiceLocators.Passport_Number)
         element.send_keys("123456")
-        element = driver.find_element(*GoodChoiceLocators.Passport_Date)
-        element.send_keys("01012010")
-        element = driver.find_element(*GoodChoiceLocators.Passport_Issued)
-        element.send_keys("ОВД")
-        element = driver.find_element(*GoodChoiceLocators.Passport_Department)
-        element.send_keys("123123")
-        element = driver.find_element(*GoodChoiceLocators.Citizenship)
-        element.send_keys("РФ")
-        element = driver.find_element(*GoodChoiceLocators.SNILS)
-        element.send_keys("1231231231212")
-        element = driver.find_element(*GoodChoiceLocators.INN)
-        element.send_keys("111111111130")
-        element = driver.find_element(*GoodChoiceLocators.Birth_Place)
-        element.send_keys("Россия")
+        #element = driver.find_element(*GoodChoiceLocators.Passport_Date)
+        #element.send_keys("01012010")
+        #element = driver.find_element(*GoodChoiceLocators.Passport_Issued)
+        #element.send_keys("ОВД")
+        #element = driver.find_element(*GoodChoiceLocators.Passport_Department)
+        #element.send_keys("123123")
+        #element = driver.find_element(*GoodChoiceLocators.Citizenship)
+        #element.send_keys("РФ")
+        #element = driver.find_element(*GoodChoiceLocators.SNILS)
+        #element.send_keys("1231231231212")
+        #element = driver.find_element(*GoodChoiceLocators.INN)
+        #element.send_keys("111111111130")
+        #element = driver.find_element(*GoodChoiceLocators.Birth_Place)
+        #element.send_keys("Россия")
         element = driver.find_element(*GoodChoiceLocators.Continue_Button2)
         element.click()
 
