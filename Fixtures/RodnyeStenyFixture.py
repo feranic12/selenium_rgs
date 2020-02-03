@@ -9,7 +9,7 @@ from selenium.webdriver.common import action_chains
 import time
 from utils import get_begin_day
 from Fixtures.BaseFixture import BaseFixture
-from Fixtures.Locators.RodnyeStenyLocators import RodnyeStenyLocators
+from Locators.RodnyeStenyLocators import RodnyeStenyLocators
 
 class RodnyeStenyFixture(BaseFixture):
     def __init__(self, browser):

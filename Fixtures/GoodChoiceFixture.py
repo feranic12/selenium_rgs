@@ -9,7 +9,7 @@ from selenium.webdriver.common import action_chains
 import time
 from utils import get_begin_day
 from Fixtures.BaseFixture import BaseFixture
-from Fixtures.Locators.GoodChoiceLocators import GoodChoiceLocators
+from Locators.GoodChoiceLocators import GoodChoiceLocators
 
 
 class GoodChoiceFixture:

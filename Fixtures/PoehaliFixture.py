@@ -9,7 +9,7 @@ from selenium.webdriver.common import action_chains
 import time
 from utils import get_begin_day
 from Fixtures.BaseFixture import BaseFixture
-from Fixtures.Locators.PoehaliLocators import PoehaliLocators
+from Locators.PoehaliLocators import PoehaliLocators
 
 
 class PoehaliFixture(BaseFixture):
