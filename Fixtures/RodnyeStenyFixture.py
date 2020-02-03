@@ -11,6 +11,7 @@ from utils import get_begin_day
 from Fixtures.BaseFixture import BaseFixture
 from Locators.RodnyeStenyLocators import RodnyeStenyLocators
 
+
 class RodnyeStenyFixture(BaseFixture):
     def __init__(self, browser):
         target = r"https://testpartner.rgs.ru/b2c/product/build/test-flatbase.html"
