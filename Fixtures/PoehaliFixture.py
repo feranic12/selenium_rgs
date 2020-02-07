@@ -39,7 +39,7 @@ class PoehaliFixture(BaseFixture):
         driver = self.driver
         WebDriverWait(driver, 10).until(EC.presence_of_element_located(PoehaliLocators.Country_Input))
         element = driver.find_element(*PoehaliLocators.Country_Input)
-        element.send_keys("Шенген"+Keys.ENTER)
+        element.send_keys("Дания"+Keys.ENTER)
 
     def conditions(self):
         driver = self.driver
