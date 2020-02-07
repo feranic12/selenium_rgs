@@ -3,6 +3,7 @@ import pytest
 from Fixtures.RodnyeStenyFixture import RodnyeStenyFixture
 from Fixtures.PoehaliFixture import PoehaliFixture
 from Fixtures.GoodChoiceFixture import GoodChoiceFixture
+from Fixtures.DoctorOnlineFixture import DoctorOnlineFixture
 
 
 @pytest.fixture
@@ -16,10 +17,12 @@ def fix(request):
         fixture = PoehaliFixture(browser, days)
     elif product == "GoodChoice":
         fixture = GoodChoiceFixture(browser)
+    elif product == "TelemedPlus":
+        fixture = DoctorOnlineFixture(browser)
     return fixture
 
 
-def test_rodnye_steny(fix):
+def test_rgs(fix):
     fix.open_page()
     fix.fill_frame()
     input()
