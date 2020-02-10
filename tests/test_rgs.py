@@ -4,7 +4,7 @@ from Fixtures.RodnyeStenyFixture import RodnyeStenyFixture
 from Fixtures.PoehaliFixture import PoehaliFixture
 from Fixtures.GoodChoiceFixture import GoodChoiceFixture
 from Fixtures.DoctorOnlineFixture import DoctorOnlineFixture
-
+from Fixtures.OncoProtectFixture import OncoProtectFixture
 
 @pytest.fixture
 def fix(request):
@@ -19,6 +19,8 @@ def fix(request):
         fixture = GoodChoiceFixture(browser)
     elif product == "TelemedPlus":
         fixture = DoctorOnlineFixture(browser)
+    elif product == "OncoProtect":
+        fixture = OncoProtectFixture(browser)
     return fixture
 
 

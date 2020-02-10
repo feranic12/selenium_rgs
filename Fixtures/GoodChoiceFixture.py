@@ -44,8 +44,8 @@ class GoodChoiceFixture(BaseFixture):
         element.send_keys("13")
         element = driver.find_element(*GoodChoiceLocators.Building)
         element.send_keys("14")
-        element = driver.find_element(*GoodChoiceLocators.Flat)
-        element.send_keys("15")
+        #element = driver.find_element(*GoodChoiceLocators.Flat)
+        #element.send_keys("15")
         element = driver.find_element(*GoodChoiceLocators.Continue_Button1)
         element.click()
 
