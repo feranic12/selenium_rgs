@@ -5,7 +5,7 @@ from Fixtures.PoehaliFixture import PoehaliFixture
 from Fixtures.GoodChoiceFixture import GoodChoiceFixture
 from Fixtures.DoctorOnlineFixture import DoctorOnlineFixture
 from Fixtures.OncoProtectFixture import OncoProtectFixture
-
+from Fixtures.CascoProFixture import CascoProFixture
 @pytest.fixture
 def fix(request):
     browser = request.config.getoption("--browser")
@@ -21,6 +21,8 @@ def fix(request):
         fixture = DoctorOnlineFixture(browser)
     elif product == "OncoProtect":
         fixture = OncoProtectFixture(browser)
+    elif product == "CascoPro":
+        fixture = CascoProFixture(browser)
     return fixture
 
 
