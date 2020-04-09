@@ -11,6 +11,7 @@ from utils import get_begin_day
 from Fixtures.BaseFixture import BaseFixture
 from Locators.CascoProLocators import CascoProLocators
 
+
 class CascoProFixture(BaseFixture):
     def __init__(self, browser):
         target = r"https://testpartner.rgs.ru/b2c/product/build/test-cascoProB2B.html"
@@ -27,15 +28,64 @@ class CascoProFixture(BaseFixture):
         element.click()
 
     def car_info(self):
+        actions = self.actions
         driver = self.driver
         WebDriverWait(driver,10).until(EC.element_to_be_clickable(CascoProLocators.Mk))
         element = driver.find_element(*CascoProLocators.Mk)
-        element.send_keys("Alfa Romeo"+Keys.ENTER*100)
+        element.send_keys("Alfa Romeo"+Keys.ENTER*1000)
         element = driver.find_element(*CascoProLocators.Model)
-        element.send_keys("147"+Keys.ENTER*100)
+        element.send_keys("147"+Keys.ENTER*1000)
         element = driver.find_element(*CascoProLocators.Year_Of_Issue)
+        element.click()
+        actions.move_by_offset(10,50).click().perform()
+        element = driver.find_element(*CascoProLocators.VIN)
+        element.send_keys("11111111111111111")
+        element = driver.find_element(*CascoProLocators.Number)
+        element.send_keys("А777АА77")
+        element = driver.find_element(*CascoProLocators.Pts_Seria)
+        element.send_keys("1234")
+        element = driver.find_element(*CascoProLocators.Pts_Number)
+        element.send_keys("123456")
+        element = driver.find_element(*CascoProLocators.Sts_Seria)
+        element.send_keys("1234")
+        element = driver.find_element(*CascoProLocators.Sts_Number)
+        element.send_keys("123456")
+        element = driver.find_element(*CascoProLocators.Continue_Button)
+        element.click()
+
+    def insurer_info(self):
+        driver = self.driver
+        element = driver.find_element(*CascoProLocators.LastName)
+        element.send_keys("Петров")
+        element = driver.find_element(*CascoProLocators.FirstName)
+        element.send_keys("Пётр")
+        element = driver.find_element(*CascoProLocators.MiddleName)
+        element.send_keys("Петрович")
+        element = driver.find_element(*CascoProLocators.Dob)
+        element.send_keys("01011990")
+        element = driver.find_element(*CascoProLocators.Phone)
+        element.send_keys("1231231212")
+        element = driver.find_element(*CascoProLocators.Male)
+        element.click()
+        element = driver.find_element(*CascoProLocators.Email)
+        element.send_keys("knikitin@avinfors.ru")
+        element = driver.find_element(*CascoProLocators.Email2)
+        element.send_keys("knikitin@avinfors.ru")
+        element = driver.find_element(*CascoProLocators.Passport_Seria)
+        element.send_keys("1234")
+        element = driver.find_element(*CascoProLocators.Passport_Number)
+        element.send_keys("123456")
+        element = driver.find_element(*CascoProLocators.Continue_Button)
+        element.click()
+
+    def agree(self):
+        driver = self.driver
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable, CascoProLocators.Accept_All_Input)
+        element = driver.find_element(*CascoProLocators.Accept_All_Input)
         element.click()
 
     def fill_frame(self):
         self.conditions()
         self.car_info()
+        self.insurer_info()
+        self.agree()

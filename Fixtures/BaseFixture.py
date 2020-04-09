@@ -1,5 +1,6 @@
 from config import chromedriver_path, geckodriver_path, firefox_binary_path
 from selenium import webdriver
+from selenium.webdriver.common import action_chains
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait # available since 2.4.0
 from selenium.webdriver.support import expected_conditions as EC # available since 2.26.0
@@ -21,6 +22,7 @@ class BaseFixture:
             self.driver = webdriver.Chrome(executable_path=self.chromedriver_path)
         elif browser == "firefox":
             self.driver = webdriver.Firefox(executable_path=self.geckodriver_path)
+        self.actions = action_chains.ActionChains(self.driver)
 
     def open_page(self):
         self.driver.get(self.target)
