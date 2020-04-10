@@ -6,6 +6,7 @@ from Fixtures.GoodChoiceFixture import GoodChoiceFixture
 from Fixtures.DoctorOnlineFixture import DoctorOnlineFixture
 from Fixtures.OncoProtectFixture import OncoProtectFixture
 from Fixtures.CascoProFixture import CascoProFixture
+from Fixtures.CarHelpFixture import CarHelpFixture
 from Fixtures.MiteFixture import MiteFixture
 
 
@@ -26,6 +27,8 @@ def fix(request):
         fixture = OncoProtectFixture(browser)
     elif product == "CascoPro":
         fixture = CascoProFixture(browser)
+    elif product == "CarHelp":
+        fixture = CarHelpFixture(browser)
     elif product == "Mite":
         fixture = MiteFixture(browser)
     return fixture
