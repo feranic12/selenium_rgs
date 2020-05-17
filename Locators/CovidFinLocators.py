@@ -23,4 +23,7 @@ class CovidFinLocators:
     insured_phone = (By.ID, "content-insuredPerson-phone")
     insured_email = (By.ID, "content-insuredPerson-email")
     insured_email2 = (By.ID, "content-insuredPerson-email2")
-    insured_document_type = (By.NAME, "content.insuredPerson.document.type")
+    insured_document_type = (By.ID, "react-select-2-input")
+    insured_seria = (By.ID, "content-insuredPerson-document-seria")
+    insured_number = (By.ID, "content-insuredPerson-document-number")
+    Accept_All_Input = (By.CSS_SELECTOR, "label[for=\"content.temp.acceptAll_custom_input\"")

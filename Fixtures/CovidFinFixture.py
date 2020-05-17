@@ -75,10 +75,23 @@ class CovidFinFixture(BaseFixture):
         element.send_keys("knikitin@avinfors.ru")
         element = driver.find_element(*CovidFinLocators.insured_document_type)
         element.send_keys("Паспорт"+Keys.ENTER)
+        element = driver.find_element(*CovidFinLocators.insured_seria)
+        element.send_keys("1234")
+        element = driver.find_element(*CovidFinLocators.insured_number)
+        element.send_keys("123123")
+        element = driver.find_element(*CovidFinLocators.continue_button)
+        element.click()
+
+    def agree(self):
+        driver = self.driver
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable, CovidFinLocators.Accept_All_Input)
+        element = driver.find_element(*CovidFinLocators.Accept_All_Input)
+        element.click()
 
     def fill_frame(self):
         self.first_block()
         self.insurer_info()
         self.insured_info()
+        self.agree()
 
 
