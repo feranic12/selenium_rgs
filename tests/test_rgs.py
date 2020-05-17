@@ -8,6 +8,7 @@ from Fixtures.OncoProtectFixture import OncoProtectFixture
 from Fixtures.CascoProFixture import CascoProFixture
 from Fixtures.CarHelpFixture import CarHelpFixture
 from Fixtures.MiteFixture import MiteFixture
+from Fixtures.CovidFinFixture import CovidFinFixture
 
 
 @pytest.fixture
@@ -31,6 +32,8 @@ def fix(request):
         fixture = CarHelpFixture(browser)
     elif product == "Mite":
         fixture = MiteFixture(browser)
+    elif product == "CovidFin":
+        fixture = CovidFinFixture(browser)
     return fixture
 
 

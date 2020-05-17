@@ -1,0 +1,26 @@
+from selenium.webdriver.common.by import By
+
+
+class CovidFinLocators:
+    dob = (By.ID, "content-policyHolder-dob")
+    is_insured = (By.CLASS_NAME, "custom-control-label")
+    male = (By.ID, "content.policyHolder.sex-male")
+    insured_dob = (By.ID, "content-insuredPerson-dob")
+    insured_male = (By.ID, "content.insuredPerson.sex-male")
+    button1 = (By.CSS_SELECTOR, "table tr:last-child>td:nth-child(2)>button")
+    insurer_lastname = (By.ID, "content-policyHolder-lastName")
+    insurer_firstname = (By.ID, "content-policyHolder-firstName")
+    insurer_middlename = (By.ID, "content-policyHolder-middleName")
+    insurer_phone = (By.ID, "content-policyHolder-phone")
+    insurer_email = (By.ID,"content-policyHolder-email")
+    insurer_email2 = (By.ID, "content-policyHolder-email2")
+    insurer_seria = (By.ID, "content-policyHolder-document-seria")
+    insurer_number = (By.ID, "content-policyHolder-document-number")
+    continue_button = (By.CSS_SELECTOR, "div.text-right>button")
+    insured_lastname = (By.ID, "content-insuredPerson-lastName")
+    insured_firstname = (By.ID, "content-insuredPerson-firstName")
+    insured_middlename = (By.ID, "content-insuredPerson-middleName")
+    insured_phone = (By.ID, "content-insuredPerson-phone")
+    insured_email = (By.ID, "content-insuredPerson-email")
+    insured_email2 = (By.ID, "content-insuredPerson-email2")
+    insured_document_type = (By.NAME, "content.insuredPerson.document.type")
