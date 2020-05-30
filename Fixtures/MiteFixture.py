@@ -32,7 +32,7 @@ class MiteFixture(BaseFixture):
 
     def insured_info(self):
         driver = self.driver
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable, MiteLocators.lastname)
+        time.sleep(2)
         element = driver.find_element(*MiteLocators.lastname)
         element.send_keys("Петров")
         element = driver.find_element(*MiteLocators.firstname)

@@ -9,6 +9,7 @@ from Fixtures.CascoProFixture import CascoProFixture
 from Fixtures.CarHelpFixture import CarHelpFixture
 from Fixtures.MiteFixture import MiteFixture
 from Fixtures.CovidFinFixture import CovidFinFixture
+from Fixtures.NoPanicFixture import NoPanicFixture
 
 
 @pytest.fixture
@@ -34,6 +35,8 @@ def fix(request):
         fixture = MiteFixture(browser)
     elif product == "CovidFin":
         fixture = CovidFinFixture(browser)
+    elif product == "NoPanic":
+        fixture = NoPanicFixture(browser)
     return fixture
 
 
