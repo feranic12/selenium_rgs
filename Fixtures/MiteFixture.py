@@ -23,7 +23,7 @@ class MiteFixture(BaseFixture):
 
     def conditions(self):
         driver = self.driver
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable, MiteLocators.dob1)
+        WebDriverWait(driver, 10).until(EC.presence_of_element_located, MiteLocators.dob1)
         element = driver.find_element(*MiteLocators.dob1)
         element.send_keys("01011990" + Keys.ENTER)
         element = driver.find_element(*MiteLocators.button2)
