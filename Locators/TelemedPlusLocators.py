@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
 
-class DoctorOnlineLocators:
+class TelemedPlusLocators:
     ButtonBuy1 = (By.XPATH, "//table//tr[4]/td[2]/button")
     Surname = (By.ID, "content-policyHolder-lastName")
     First_Name = (By.ID,"content-policyHolder-firstName")

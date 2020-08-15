@@ -3,7 +3,7 @@ import pytest
 from Fixtures.RodnyeStenyFixture import RodnyeStenyFixture
 from Fixtures.PoehaliFixture import PoehaliFixture
 from Fixtures.GoodChoiceFixture import GoodChoiceFixture
-from Fixtures.DoctorOnlineFixture import DoctorOnlineFixture
+from Fixtures.TelemedPlusFixture import TelemedPlusFixture
 from Fixtures.OncoProtectFixture import OncoProtectFixture
 from Fixtures.CascoProFixture import CascoProFixture
 from Fixtures.CarHelpFixture import CarHelpFixture
@@ -24,7 +24,7 @@ def fix(request):
     elif product == "GoodChoice":
         fixture = GoodChoiceFixture(browser)
     elif product == "TelemedPlus":
-        fixture = DoctorOnlineFixture(browser)
+        fixture = TelemedPlusFixture(browser)
     elif product == "OncoProtect":
         fixture = OncoProtectFixture(browser)
     elif product == "CascoPro":
