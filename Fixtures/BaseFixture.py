@@ -1,4 +1,4 @@
-from config import chromedriver_path, geckodriver_path, firefox_binary_path
+from config import chromedriver_path, chrome_binary_path, geckodriver_path, firefox_binary_path
 from selenium import webdriver
 from selenium.webdriver.common import action_chains
 from selenium.common.exceptions import TimeoutException
@@ -7,19 +7,21 @@ from selenium.webdriver.support import expected_conditions as EC # available sin
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.chrome.options import Options
 import time
 
 
 class BaseFixture:
-
     def __init__(self, browser, target):
+        self.options = Options()
+        self.options.binary_location = chrome_binary_path
         self.chromedriver_path = chromedriver_path
         self.geckodriver_path = geckodriver_path
         self.firefox_binary_path = firefox_binary_path
         self.browser = browser
         self.target = target
         if browser == "chrome":
-            self.driver = webdriver.Chrome(executable_path=self.chromedriver_path)
+            self.driver = webdriver.Chrome(executable_path=self.chromedriver_path, options=self.options)
         elif browser == "firefox":
             self.driver = webdriver.Firefox(executable_path=self.geckodriver_path)
         self.actions = action_chains.ActionChains(self.driver)
