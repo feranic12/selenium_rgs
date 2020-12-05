@@ -26,7 +26,7 @@ class PoehaliFixture(BaseFixture):
         driver = self.driver
         WebDriverWait(driver, 10).until(EC.element_to_be_clickable(PoehaliLocators.Insured0_Dob_Input))
         element = driver.find_element(*PoehaliLocators.Insured0_Dob_Input)
-        element.send_keys("01012002")
+        element.send_keys("01011990")
 
     def trip_type(self):
         driver = self.driver
@@ -77,7 +77,7 @@ class PoehaliFixture(BaseFixture):
 
     def insured_info(self):
         driver = self.driver
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(PoehaliLocators.Insured0_Firstname_Input))
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(PoehaliLocators.Insured0_Lastname_Input))
         element = driver.find_element(*PoehaliLocators.Insured0_Lastname_Input)
         element.send_keys("Петров")
         element = driver.find_element(*PoehaliLocators.Insured0_Firstname_Input)

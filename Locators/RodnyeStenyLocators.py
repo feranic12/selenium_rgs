@@ -23,7 +23,7 @@ class RodnyeStenyLocators:
     InsurersFirstName_Input = (By.NAME, "content.policyHolder.firstName")
     InsurersMiddleName_Input = (By.NAME, "content.policyHolder.middleName")
     InsurersDob_Input = (By.CSS_SELECTOR, "input[data-name=\"content.policyHolder.dob\"]")
-    InsurersPhone_Input = (By.CSS_SELECTOR, "input[data-name=\"content.policyHolder.phone\"]")
+    InsurersPhone_Input = (By.NAME, "content.policyHolder.phone")
     InsMale_Button = (By.ID, "content.policyHolder.sex-male")
     InsEmail_Input = (By.NAME, "content.policyHolder.email")
     InsEmail2_Input = (By.NAME, "content.policyHolder.email2")

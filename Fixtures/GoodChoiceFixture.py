@@ -21,6 +21,14 @@ class GoodChoiceFixture(BaseFixture):
         BaseFixture.open_page(self)
         self.driver.switch_to.frame("RESOLUTE_INSURANCE")
 
+    def policy_type(self):
+        driver = self.driver
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(GoodChoiceLocators.Button_Prolongation_False))
+        element = driver.find_element(*GoodChoiceLocators.Button_Prolongation_False)
+        element.click()
+        element = driver.find_element(*GoodChoiceLocators.Continue_Button1)
+        element.click()
+
     def conditions(self):
         driver = self.driver
         WebDriverWait(driver, 10).until(EC.element_to_be_clickable(GoodChoiceLocators.Button1))
@@ -29,9 +37,6 @@ class GoodChoiceFixture(BaseFixture):
 
     def insurance_object(self):
         driver = self.driver
-        #WebDriverWait(driver,10).until(EC.element_to_be_clickable(GoodChoiceLocators.Button_Flat))
-        #element = driver.find_element(*GoodChoiceLocators.Button_Flat)
-        #element.click()
         WebDriverWait(driver,10).until(EC.element_to_be_clickable(GoodChoiceLocators.Region_Input))
         element = driver.find_element(*GoodChoiceLocators.Region_Input)
         element.send_keys("город.Москва" + Keys.ENTER)
@@ -47,7 +52,7 @@ class GoodChoiceFixture(BaseFixture):
         element.send_keys("14")
         #element = driver.find_element(*GoodChoiceLocators.Flat)
         #element.send_keys("15")
-        element = driver.find_element(*GoodChoiceLocators.Continue_Button1)
+        element = driver.find_element(*GoodChoiceLocators.Continue_Button2)
         element.click()
 
     def insurer(self):
@@ -87,7 +92,7 @@ class GoodChoiceFixture(BaseFixture):
         #element.send_keys("111111111130")
         #element = driver.find_element(*GoodChoiceLocators.Birth_Place)
         #element.send_keys("Россия")
-        element = driver.find_element(*GoodChoiceLocators.Continue_Button2)
+        element = driver.find_element(*GoodChoiceLocators.Continue_Button3)
         element.click()
 
     def agree(self):
@@ -97,6 +102,7 @@ class GoodChoiceFixture(BaseFixture):
         element.click()
 
     def fill_frame(self):
+        self.policy_type()
         self.conditions()
         self.insurance_object()
         self.insurer()
