@@ -20,6 +20,14 @@ class OncoProtectFixture(BaseFixture):
         BaseFixture.open_page(self)
         self.driver.switch_to.frame("RESOLUTE_INSURANCE")
 
+    def policy_type(self):
+        driver = self.driver
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(OncoProtectLocators.Button_Prolongation_False))
+        element = driver.find_element(*OncoProtectLocators.Button_Prolongation_False)
+        element.click()
+        element = driver.find_element(*OncoProtectLocators.Continue_Button1)
+        element.click()
+
     def conditions(self):
         driver = self.driver
         WebDriverWait(driver, 10).until(EC.element_to_be_clickable(OncoProtectLocators.ButtonBuy1))
@@ -49,13 +57,13 @@ class OncoProtectFixture(BaseFixture):
         element.send_keys("1234")
         element = driver.find_element(*OncoProtectLocators.Number)
         element.send_keys("123456")
-        element = driver.find_element(*OncoProtectLocators.Continue1)
+        element = driver.find_element(*OncoProtectLocators.Continue_Button2)
         element.click()
 
     def insured(self):
         driver = self.driver
         WebDriverWait(driver,10).until(EC.element_to_be_clickable(OncoProtectLocators.Is_Insurer))
-        element = driver.find_element(*OncoProtectLocators.Continue2)
+        element = driver.find_element(*OncoProtectLocators.Continue_Button3)
         element.click()
 
     def agree(self):
@@ -65,6 +73,7 @@ class OncoProtectFixture(BaseFixture):
         element.click()
 
     def fill_frame(self):
+        self.policy_type()
         self.conditions()
         self.insurer()
         self.insured()
