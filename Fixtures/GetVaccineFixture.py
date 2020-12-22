@@ -29,3 +29,4 @@ class GetVaccineFixture(BaseFixture):
 
     def fill_frame(self):
         self.conditions()
+        input()
