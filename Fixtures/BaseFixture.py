@@ -13,17 +13,12 @@ import time
 
 class BaseFixture:
     def __init__(self, browser, target):
-        self.chrome_options = ChromeOptions()
-        self.chrome_options.binary_location = chrome_binary_path
-        self.chromedriver_path = chromedriver_path
-        self.geckodriver_path = geckodriver_path
-        self.firefox_binary_path = firefox_binary_path
-        self.browser = browser
+        chrome_options = ChromeOptions()
         self.target = target
         if browser == "chrome":
-            self.driver = webdriver.Chrome(executable_path=self.chromedriver_path, options=self.chrome_options)
+            self.driver = webdriver.Chrome(executable_path=chromedriver_path, options=chrome_options)
         elif browser == "firefox":
-            self.driver = webdriver.Firefox(executable_path=self.geckodriver_path)
+            self.driver = webdriver.Firefox(executable_path=geckodriver_path)
         self.actions = action_chains.ActionChains(self.driver)
 
     def open_page(self):
