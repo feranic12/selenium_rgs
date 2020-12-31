@@ -40,6 +40,7 @@ def fix(request):
         fixture = NoPanicFixture(browser)
     elif product == "GetVaccine":
         fixture = GetVaccineFixture(browser)
+    #request.addfinalizer(fixture.destroy)
     return fixture
 
 
