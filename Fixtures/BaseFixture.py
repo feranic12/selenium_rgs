@@ -1,4 +1,4 @@
-from config import chromedriver_path, chrome_binary_path, geckodriver_path, firefox_binary_path
+import config
 from selenium import webdriver
 from selenium.webdriver.common import action_chains
 from selenium.common.exceptions import TimeoutException
@@ -13,13 +13,17 @@ import time
 
 class BaseFixture:
     def __init__(self, browser, target):
-        chrome_options = ChromeOptions()
         self.target = target
         if browser == "chrome":
-            self.driver = webdriver.Chrome(executable_path=chromedriver_path, options=chrome_options)
+            chrome_options = ChromeOptions()
+            self.driver = webdriver.Chrome(executable_path=config.chromedriver_path, options=chrome_options)
         elif browser == "firefox":
-            self.driver = webdriver.Firefox(executable_path=geckodriver_path)
-        self.actions = action_chains.ActionChains(self.driver)
+            self.driver = webdriver.Firefox(executable_path=config.geckodriver_path)
+        elif browser == "ie":
+            self.driver = webdriver.Ie(executable_path=config.iedriver_path)
+        elif browser == "opera":
+            self.driver = webdriver.Opera(executable_path=config.operadriver_path)
+        #self.actions = action_chains.ActionChains(self.driver)
 
     def open_page(self):
         self.driver.get(self.target)
