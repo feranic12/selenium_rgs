@@ -26,20 +26,19 @@ class GoodChoiceFixture(BaseFixture):
         WebDriverWait(driver, 10).until(EC.element_to_be_clickable(GoodChoiceLocators.Button_Prolongation_False))
         element = driver.find_element(*GoodChoiceLocators.Button_Prolongation_False)
         element.click()
-        element = driver.find_element(*GoodChoiceLocators.Continue_Button1)
-        element.click()
 
     def conditions(self):
         driver = self.driver
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(GoodChoiceLocators.Button1))
-        element = driver.find_element(*GoodChoiceLocators.Button1)
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(GoodChoiceLocators.Continue_Button1))
+        element = driver.find_element(*GoodChoiceLocators.Continue_Button1)
         element.click()
 
     def insurance_object(self):
         driver = self.driver
-        WebDriverWait(driver,10).until(EC.element_to_be_clickable(GoodChoiceLocators.Region_Input))
+        WebDriverWait(driver,10).until(EC.presence_of_element_located(GoodChoiceLocators.Region_Input))
         element = driver.find_element(*GoodChoiceLocators.Region_Input)
-        element.send_keys("город.Москва" + Keys.ENTER)
+        element.click()
+        element.send_keys(Keys.ENTER)
         element = driver.find_element(*GoodChoiceLocators.City)
         element.send_keys("Москва")
         element = driver.find_element(*GoodChoiceLocators.Street)
