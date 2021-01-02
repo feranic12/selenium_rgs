@@ -29,14 +29,18 @@ class CascoProFixture(BaseFixture):
     def car_info(self):
         actions = self.actions
         driver = self.driver
-        WebDriverWait(driver,10).until(EC.element_to_be_clickable(CascoProLocators.Mk))
-        element = driver.find_element(*CascoProLocators.Mk)
-        element.send_keys("Alfa Romeo"+Keys.ENTER*1000)
-        element = driver.find_element(*CascoProLocators.Model)
-        element.send_keys("147"+Keys.ENTER*1000)
-        element = driver.find_element(*CascoProLocators.Year_Of_Issue)
+        WebDriverWait(driver,10).until(EC.element_to_be_clickable(CascoProLocators.Maker_To_Click))
+        element = driver.find_element(*CascoProLocators.Maker_To_Click)
         element.click()
-        actions.move_by_offset(10,50).click().perform()
+        element = driver.find_element(*CascoProLocators.Maker_To_Send_keys)
+        element.send_keys("Alfa Romeo"+Keys.ENTER)
+        element = driver.find_element(*CascoProLocators.Model_To_Click)
+        element.click()
+        element = driver.find_element(*CascoProLocators.Model_To_Send_keys)
+        element.send_keys("147" + Keys.ENTER)
+        """
+        #actions.move_by_offset(10,50).click().perform()
+        element.send_keys(Keys.ARROW_DOWN+Keys.ENTER)
         element = driver.find_element(*CascoProLocators.VIN)
         element.send_keys("11111111111111111")
         element = driver.find_element(*CascoProLocators.Number)
@@ -51,6 +55,7 @@ class CascoProFixture(BaseFixture):
         element.send_keys("123456")
         element = driver.find_element(*CascoProLocators.Continue_Button)
         element.click()
+        """
 
     def insurer_info(self):
         driver = self.driver
@@ -86,5 +91,5 @@ class CascoProFixture(BaseFixture):
     def fill_frame(self):
         self.conditions()
         self.car_info()
-        self.insurer_info()
-        self.agree()
+        #self.insurer_info()
+        #self.agree()

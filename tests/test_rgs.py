@@ -42,11 +42,12 @@ def fix(request, scope='session'):
         fixture = GetVaccineFixture(browser)
 
     yield fixture
-    #request.addfinalizer(fixture.destroy)
 
-    fixture.destroy()
+    #request.addfinalizer(fixture.destroy)
+    #fixture.destroy()
 
 
 def test_rgs(fix):
     fix.open_page()
     fix.fill_frame()
+    input()
