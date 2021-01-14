@@ -14,7 +14,7 @@ from Fixtures.GetVaccineFixture import GetVaccineFixture
 
 
 @pytest.fixture
-def fix(request):
+def fix(request, scope='session'):
     browser = request.config.getoption("--browser")
     days = request.config.getoption("--days")
     product = request.config.getoption("--product")
@@ -40,7 +40,11 @@ def fix(request):
         fixture = NoPanicFixture(browser)
     elif product == "GetVaccine":
         fixture = GetVaccineFixture(browser)
-    return fixture
+
+    yield fixture
+
+    #request.addfinalizer(fixture.destroy)
+    #fixture.destroy()
 
 
 def test_rgs(fix):

@@ -63,4 +63,3 @@ class GetVaccineFixture(BaseFixture):
         self.conditions()
         self.insurer_info()
         self.agree()
-        input()

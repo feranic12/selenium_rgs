@@ -3,8 +3,10 @@ from selenium.webdriver.common.by import By
 
 class CascoProLocators:
     ButtonBuy1 = (By.CSS_SELECTOR, "table tr:last-child>td:nth-child(2)>button")
-    Mk = (By.ID, "react-select-2-input")
-    Model = (By.ID, "react-select-3-input")
+    Maker_To_Click = (By.CSS_SELECTOR, "div#content-object-data-mark div.SelectFieldInner__value-container.css-1hwfws3")
+    Maker_To_Send_keys = (By.ID, "react-select-2-input")
+    Model_To_Click = (By.CSS_SELECTOR, "div#content-object-data-model div.SelectFieldInner__value-container.css-1hwfws3")
+    Model_To_Send_Keys = (By.ID, "react-select-3-input")
     Year_Of_Issue = (By.CSS_SELECTOR, "div#wizard-container div.form-row:nth-child(2) div.SelectFieldClosed")
     VIN = (By.ID, "content-object-data-vin")
     Number = (By.ID, "content-object-data-gosNumber")

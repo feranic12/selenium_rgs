@@ -100,4 +100,3 @@ class RodnyeStenyFixture(BaseFixture):
         self.registration()
         self.insurer_info()
         self.agree()
-        input()
