@@ -2,7 +2,6 @@ from selenium.webdriver.common.by import By
 
 class OncoProtectLocators:
     Button_Prolongation_False = (By.ID, "content.contract.data.prolongation.is-false")
-    Continue_Button1 = (By.CSS_SELECTOR, "div.col>button")
     ButtonBuy1 = (By.XPATH, "//table//tr[5]/td[2]/button")
     Surname = (By.NAME, "content.policyHolder.lastName")
     First_Name = (By.NAME, "content.policyHolder.firstName")

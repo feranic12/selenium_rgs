@@ -26,8 +26,6 @@ class GoodChoiceFixture(BaseFixture):
         WebDriverWait(driver, 10).until(EC.element_to_be_clickable(GoodChoiceLocators.Button_Prolongation_False))
         element = driver.find_element(*GoodChoiceLocators.Button_Prolongation_False)
         element.click()
-        element = driver.find_element(*GoodChoiceLocators.Continue_Button1)
-        element.click()
 
     def conditions(self):
         driver = self.driver

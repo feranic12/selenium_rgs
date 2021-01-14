@@ -3,9 +3,8 @@ from selenium.webdriver.common.by import By
 
 class GoodChoiceLocators:
     Button_Prolongation_False = (By.ID, "content.contract.data.prolongation.is-false")
-    Continue_Button1 = (By.XPATH,"//table/tbody/tr[10]/td[2]/button")
     Button1 = (By.CSS_SELECTOR, "div.mt-3 tr:last-child>td:nth-child(2)>button")
-    Region_Input = (By.NAME, "content.object.data.address.registration.region")
+    Region_Input = (By.ID, "react-select-2-input")
     City = (By.NAME, "content.object.data.address.registration.city.name")
     Street = (By.NAME, "content.object.data.address.registration.street.name")
     House = (By.NAME, "content.object.data.address.registration.house")
