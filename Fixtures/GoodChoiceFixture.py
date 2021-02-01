@@ -29,8 +29,8 @@ class GoodChoiceFixture(BaseFixture):
 
     def conditions(self):
         driver = self.driver
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(GoodChoiceLocators.Continue_Button1))
-        element = driver.find_element(*GoodChoiceLocators.Continue_Button1)
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(GoodChoiceLocators.Button1))
+        element = driver.find_element(*GoodChoiceLocators.Button1)
         element.click()
 
     def insurance_object(self):
