@@ -14,8 +14,8 @@ from Locators.MiteLocators import MiteLocators
 
 class MiteFixture(BaseFixture):
     def __init__(self, browser):
-        target = r"https://testpartner.rgs.ru/b2c/product/build/test-mite.html"
-        BaseFixture.__init__(self, browser, target)
+        self.target = r"https://testpartner.rgs.ru/b2c/product/build/test-mite.html"
+        BaseFixture.__init__(self, browser)
 
     def open_page(self):
         BaseFixture.open_page(self)
