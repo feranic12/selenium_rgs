@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import pytest
-from Fixtures.RodnyeStenyFixture import RodnyeStenyFixture
-from Fixtures.PoehaliFixture import PoehaliFixture
+from Fixtures.FlatbaseFixture import FlatbaseFixture
+from Fixtures.VoyageFixture import VoyageFixture
 from Fixtures.GoodChoiceFixture import GoodChoiceFixture
 from Fixtures.TelemedPlusFixture import TelemedPlusFixture
 from Fixtures.OncoProtectFixture import OncoProtectFixture
@@ -19,10 +19,10 @@ def fix(request, scope='session'):
     browser = request.config.getoption("--browser")
     days = request.config.getoption("--days")
     product = request.config.getoption("--product")
-    if product == "RodnyeSteny":
-        fixture = RodnyeStenyFixture(browser)
-    elif product == "Poehali":
-        fixture = PoehaliFixture(browser, days)
+    if product == "Flatbase":
+        fixture = FlatbaseFixture(browser)
+    elif product == "Voyage":
+        fixture = VoyageFixture(browser, days)
     elif product == "GoodChoice":
         fixture = GoodChoiceFixture(browser)
     elif product == "TelemedPlus":

@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
 
-class PoehaliLocators:
+class VoyageLocators:
     Insured0_Dob_Input = (By.CSS_SELECTOR, "input[data-name=\"content.insConditions.insVariant.insurers[0].dob\"]")
     Trip_Type_Button = (By.ID, "content.insConditions.insVariant.tripType-single")
     Country_Input = (By.ID, "react-select-2-input")

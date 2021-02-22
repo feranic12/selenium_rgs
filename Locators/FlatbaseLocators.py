@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
 
-class RodnyeStenyLocators:
+class FlatbaseLocators:
     Area_Input = (By.NAME, "content.object.data.area")
     Region_Button = (By.ID,"content.object.data.flatbaseRegion-1")
     Owned_Button = (By.ID, "content.object.data.privat-yes")
