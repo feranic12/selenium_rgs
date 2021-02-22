@@ -11,6 +11,7 @@ from Fixtures.MiteFixture import MiteFixture
 from Fixtures.CovidFinFixture import CovidFinFixture
 from Fixtures.NoPanicFixture import NoPanicFixture
 from Fixtures.GetVaccineFixture import GetVaccineFixture
+from Fixtures.Voyage2Fixture import Voyage2Fixture
 
 
 @pytest.fixture
@@ -40,6 +41,9 @@ def fix(request, scope='session'):
         fixture = NoPanicFixture(browser)
     elif product == "GetVaccine":
         fixture = GetVaccineFixture(browser)
+    elif product == "Voyage2":
+        fixture = Voyage2Fixture(browser)
+
 
     yield fixture
 
