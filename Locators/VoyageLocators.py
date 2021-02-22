@@ -10,7 +10,7 @@ class VoyageLocators:
     Trip_Start_Input = (By.CSS_SELECTOR, "input[data-name=\"content.contract.departures\"]")
     Trip_End_Input = (By.CSS_SELECTOR, "input[data-name=\"content.contract.arrival\"]")
     Protection_Needed_Button = (By.ID, "content.insConditions.insVariant.risks.sport.on-true")
-    Buy_Premium_Button = (By.CSS_SELECTOR, "table.t-table-0-2-11 tr:last-child > td:last-child > button:nth-child(2)")
+    Buy_Premium_Button = (By.CSS_SELECTOR, "div.table-responsive>table tr:last-child > td:last-child > button:nth-child(2)")
     No_Options_Button = Insured0_Next_Button = Insurer_Next_Button = (By.CSS_SELECTOR, "div.text-right > button")
     Insured0_Lastname_Input = (By.NAME, "content.insConditions.insVariant.insurers[0].lastName")
     Insured0_Firstname_Input = (By.NAME, "content.insConditions.insVariant.insurers[0].firstName")
