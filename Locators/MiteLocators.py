@@ -2,13 +2,13 @@ from selenium.webdriver.common.by import By
 
 
 class MiteLocators:
-    dob1 = (By.CSS_SELECTOR, "input[data-name=\"content.insuredPerson.list[0].dob\"]")
-    button2 = (By.XPATH, "//table//tr[11]/td[2]/button[2]")
+    dob1 = (By.NAME, "content.insuredPerson.list[0].dob")
+    button2 = (By.CSS_SELECTOR, "table.n-table-0-2-6 tr:last-child>td:nth-child(2)>button:last-child")
     #button1 = (By.CSS_SELECTOR, r"table tr:last-child>td:nth-child(2)>button:first-child")
     lastname = (By.NAME, "content.insuredPerson.list[0].lastName")
     firstname = (By.NAME, "content.insuredPerson.list[0].firstName")
     middlename = (By.NAME, "content.insuredPerson.list[0].middleName")
-    male = (By.ID, "content.insuredPerson.list[0].sex-male")
+    male = (By.CSS_SELECTOR, "div[data-name=\"content.insuredPerson.list[0].sex\"] button:first-child")
     is_insured = (By.CSS_SELECTOR, "label[for=\"insuredPerson-0-isInsured\"]")
     Continue_Button1 = (By.CSS_SELECTOR, "div.text-right>button")
     phone = (By.NAME, "content.policyHolder.phone")
