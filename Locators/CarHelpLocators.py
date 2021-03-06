@@ -5,7 +5,7 @@ class CarHelpLocators:
     Mk = (By.ID, "react-select-2-input")
     Model = (By.ID, "react-select-3-input")
     Year_Of_Issue = (By.CSS_SELECTOR, "div#wizard-container div.form-row:nth-child(2) div.SelectFieldClosed")
-    VIN = (By.ID, "content-object-data-vin")
+    VIN = (By.NAME, "content.object.data.vin")
     Number = (By.ID, "content-object-data-gosNumber")
     Pts_Seria = (By.ID, "content-object-data-tsPassport-seria")
     Pts_Number = (By.ID, "content-object-data-tsPassport-number")

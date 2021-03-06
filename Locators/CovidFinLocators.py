@@ -2,11 +2,11 @@ from selenium.webdriver.common.by import By
 
 
 class CovidFinLocators:
-    dob = (By.CSS_SELECTOR, "input[data-name=\"content.policyHolder.dob\"]")
+    dob = (By.NAME, "content.policyHolder.dob")
     is_insured = (By.CSS_SELECTOR, "label[for=\"content.insuredPerson.is.type_custom_input\"]")
-    male = (By.ID, "content.policyHolder.sex-male")
-    insured_dob = (By.CSS_SELECTOR, "input[data-name=\"content.insuredPerson.dob\"]")
-    insured_male = (By.ID, "content.insuredPerson.sex-male")
+    male = (By.CSS_SELECTOR, "div[data-name=\"content.policyHolder.sex\"] button:first-child")
+    insured_dob = (By.NAME, "content.insuredPerson.dob")
+    insured_male = (By.CSS_SELECTOR, "div[data-name=\"content.insuredPerson.sex\"] button:first-child")
     button1 = (By.CSS_SELECTOR, "table tr:last-child>td:nth-child(2)>button")
     insurer_lastname = (By.NAME, "content.policyHolder.lastName")
     insurer_firstname = (By.NAME, "content.policyHolder.firstName")
@@ -23,7 +23,6 @@ class CovidFinLocators:
     insured_phone = (By.NAME, "content.insuredPerson.phone")
     insured_email = (By.NAME, "content.insuredPerson.email")
     insured_email2 = (By.NAME, "content.insuredPerson.email2")
-    insured_document_type = (By.ID, "react-select-2-input")
     insured_seria = (By.NAME, "content.insuredPerson.document.seria")
     insured_number = (By.NAME, "content.insuredPerson.document.number")
     Accept_All_Input = (By.CSS_SELECTOR, "label[for=\"content.temp.acceptAll_custom_input\"")

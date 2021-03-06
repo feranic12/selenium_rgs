@@ -1,8 +1,8 @@
 from selenium.webdriver.common.by import By
 
 class NoPanicLocators:
-    dob = (By.CSS_SELECTOR, "input[data-name=\"content.policyHolder.dob\"]")
-    male = (By.ID, "content.policyHolder.sex-male")
+    dob = (By.NAME, "content.policyHolder.dob")
+    male = (By.CSS_SELECTOR, "div[data-name=\"content.policyHolder.sex\"] button:first-child")
     button1 = (By.CSS_SELECTOR, "table tr:last-child>td:nth-child(2)>button")
     insurer_lastname = (By.NAME, "content.policyHolder.lastName")
     insurer_firstname = (By.NAME, "content.policyHolder.firstName")

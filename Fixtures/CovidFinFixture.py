@@ -73,8 +73,6 @@ class CovidFinFixture(BaseFixture):
         element.send_keys("1231231212")
         element = driver.find_element(*CovidFinLocators.insured_email)
         element.send_keys("knikitin@avinfors.ru")
-        element = driver.find_element(*CovidFinLocators.insured_document_type)
-        element.send_keys("Паспорт"+Keys.ENTER)
         element = driver.find_element(*CovidFinLocators.insured_seria)
         element.send_keys("1234")
         element = driver.find_element(*CovidFinLocators.insured_number)
