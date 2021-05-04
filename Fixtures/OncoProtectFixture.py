@@ -14,7 +14,7 @@ from Locators.OncoProtectLocators import OncoProtectLocators
 class OncoProtectFixture(BaseFixture):
     def __init__(self, browser):
         self.target = r"https://testpartner.rgs.ru/b2c/product/build/test-oncoProtectB2B.html"
-        BaseFixture.__init__(self, browser)
+        BaseFixture.basic_setup(self, browser)
 
     def open_page(self):
         BaseFixture.open_page(self)
