@@ -15,7 +15,7 @@ from Locators.FlatbaseLocators import FlatbaseLocators
 class FlatbaseFixture(BaseFixture):
     def __init__(self, browser):
         self.target = r"https://testpartner.rgs.ru/b2c/product/build/test-flatbase.html"
-        BaseFixture.basic_setup(self, browser)
+        self.basic_setup(browser)
 
     def open_page(self):
         BaseFixture.open_page(self)
@@ -49,6 +49,7 @@ class FlatbaseFixture(BaseFixture):
         element.send_keys(Keys.ARROW_DOWN)
         time.sleep(1)
         element.send_keys(Keys.ENTER)
+        time.sleep(1)
         element = driver.find_element(*FlatbaseLocators.Flat_Input)
         element.send_keys("4")
         element = driver.find_element(*FlatbaseLocators.Calc_Next_Button)

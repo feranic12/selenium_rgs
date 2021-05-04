@@ -14,10 +14,10 @@ from Locators.NoPanicLocators import NoPanicLocators
 class NoPanicFixture(BaseFixture):
     def __init__(self, browser):
         self.target = r"https://testpartner.rgs.ru/b2c/product/build/test-nopanic.html"
-        BaseFixture.basic_setup(self, browser)
+        self.basic_setup(browser)
 
     def open_page(self):
-        BaseFixture.open_page(self)
+        self.open_page(self)
         self.driver.switch_to.frame("RESOLUTE_INSURANCE")
 
     def first_block(self):
