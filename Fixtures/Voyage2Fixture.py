@@ -56,11 +56,9 @@ class Voyage2Fixture(BaseFixture):
         driver = self.driver
         WebDriverWait(driver, 10).until(EC.element_to_be_clickable(Voyage2Locators.Insured0LastName))
         element = driver.find_element(*Voyage2Locators.Insured0LastName)
-        element.send_keys("Петров")
+        element.send_keys("Petrov")
         element = driver.find_element(*Voyage2Locators.Insured0FirstName)
-        element.send_keys("Петр")
-        element = driver.find_element(*Voyage2Locators.Insured0MiddleName)
-        element.send_keys("Петрович")
+        element.send_keys("Petr")
         element = driver.find_element(*Voyage2Locators.Continue1)
         element.click()
 
@@ -81,17 +79,13 @@ class Voyage2Fixture(BaseFixture):
         element.send_keys("knikitin@avinfors.ru")
         element = driver.find_element(*Voyage2Locators.InsurerEmail2)
         element.send_keys("knikitin@avinfors.ru")
-        element = driver.find_element(*Voyage2Locators.InsurerPassportSeria)
-        element.send_keys("1234")
-        element = driver.find_element(*Voyage2Locators.InsurerPassportNumber)
-        element.send_keys("123456")
         element = driver.find_element(*Voyage2Locators.Continue2)
         element.click()
 
     def agree(self):
         driver = self.driver
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(Voyage2Locators.Accept_All_Input))
-        element = driver.find_element(*Voyage2Locators.Accept_All_Input)
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(Voyage2Locators.Accept))
+        element = driver.find_element(*Voyage2Locators.Accept)
         element.click()
 
     def fill_frame(self):

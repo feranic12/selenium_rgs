@@ -25,5 +25,5 @@ class Voyage2Locators:
     InsurerPassportSeria = (By.NAME, "content.policyHolder.document.seria")
     InsurerPassportNumber = (By.NAME, "content.policyHolder.document.number")
     Continue2 = (By.CSS_SELECTOR, "div.text-right button")
-    Accept_All_Input = (By.CSS_SELECTOR, "label[for=\"content.temp.acceptAll_custom_input\"]")
+    Accept = (By.CSS_SELECTOR, "label[for=\"content.temp.accept1_custom_input\"]")
 
