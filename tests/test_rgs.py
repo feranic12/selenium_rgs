@@ -12,12 +12,16 @@ from Fixtures.CovidFinFixture import CovidFinFixture
 from Fixtures.NoPanicFixture import NoPanicFixture
 from Fixtures.GetVaccineFixture import GetVaccineFixture
 from Fixtures.Voyage2Fixture import Voyage2Fixture
+from Fixtures.VoyageToRussiaFixture import VoyageToRussiaFixture
+from Fixtures.VoyageToRussiaRUSFixture import VoyageToRussiaRUSFixture
+from Fixtures.VoyageToRussiaENGFixture import VoyageToRussiaENGFixture
 
 
 @pytest.fixture
 def fix(request, scope='session'):
     browser = request.config.getoption("--browser")
     days = request.config.getoption("--days")
+    lang = request.config.getoption("--lang")
     product = request.config.getoption("--product")
     if product == "Flatbase":
         fixture = FlatbaseFixture(browser)
@@ -43,6 +47,13 @@ def fix(request, scope='session'):
         fixture = GetVaccineFixture(browser)
     elif product == "Voyage2":
         fixture = Voyage2Fixture(browser)
+    elif product == "VoyageToRussia":
+        if (lang == "ENG"):
+            fixture = VoyageToRussiaENGFixture(browser)
+        elif (lang =="RUS"):
+            fixture = VoyageToRussiaRUSFixture(browser)
+        else:
+            raise Exception()
 
 
     yield fixture
