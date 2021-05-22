@@ -6,3 +6,6 @@ def get_begin_day(delta_days):
     begin_day = today + timedelta(int(delta_days))
     begin_day_str = begin_day.strftime("%d%m%Y")
     return begin_day_str
+
+class InvalidLanguageException(Exception):
+    pass

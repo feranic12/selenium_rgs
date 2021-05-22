@@ -1,7 +1,8 @@
 from selenium.webdriver.common.by import By
 
 
-class VoyageToRussiaCommonLocators:
+class VoyageToRussiaLocators:
+    LanguageSwitcher = (By.CSS_SELECTOR, "div.mx-2")
     Insured0Dob = (By.NAME, "content.insConditions.insVariant.insurersDob[0].dob")
     TripType = (By.CSS_SELECTOR, "div[data-name=\"content.insConditions.insVariant.tripType\"] button:first-child")
     Coverage = (By.CSS_SELECTOR, "div[data-name=\"content.insConditions.insVariant.risks.medical.limit\"] button:first-child")

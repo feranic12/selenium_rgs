@@ -13,47 +13,47 @@ from Fixtures.NoPanicFixture import NoPanicFixture
 from Fixtures.GetVaccineFixture import GetVaccineFixture
 from Fixtures.Voyage2Fixture import Voyage2Fixture
 from Fixtures.VoyageToRussiaFixture import VoyageToRussiaFixture
-from Fixtures.VoyageToRussiaRUSFixture import VoyageToRussiaRUSFixture
-from Fixtures.VoyageToRussiaENGFixture import VoyageToRussiaENGFixture
-
+from utils import InvalidLanguageException
 
 @pytest.fixture
 def fix(request, scope='session'):
-    browser = request.config.getoption("--browser")
-    days = request.config.getoption("--days")
-    lang = request.config.getoption("--lang")
-    product = request.config.getoption("--product")
-    if product == "Flatbase":
-        fixture = FlatbaseFixture(browser)
-    elif product == "Voyage":
-        fixture = VoyageFixture(browser, days)
-    elif product == "GoodChoice":
-        fixture = GoodChoiceFixture(browser)
-    elif product == "TelemedPlus":
-        fixture = TelemedPlusFixture(browser)
-    elif product == "OncoProtect":
-        fixture = OncoProtectFixture(browser)
-    elif product == "CascoPro":
-        fixture = CascoProFixture(browser)
-    elif product == "CarHelp":
-        fixture = CarHelpFixture(browser)
-    elif product == "Mite":
-        fixture = MiteFixture(browser)
-    elif product == "CovidFin":
-        fixture = CovidFinFixture(browser)
-    elif product == "NoPanic":
-        fixture = NoPanicFixture(browser)
-    elif product == "GetVaccine":
-        fixture = GetVaccineFixture(browser)
-    elif product == "Voyage2":
-        fixture = Voyage2Fixture(browser)
-    elif product == "VoyageToRussia":
-        if (lang == "ENG"):
-            fixture = VoyageToRussiaENGFixture(browser)
-        elif (lang =="RUS"):
-            fixture = VoyageToRussiaRUSFixture(browser)
-        else:
-            raise Exception()
+
+    try:
+        browser = request.config.getoption("--browser")
+        days = request.config.getoption("--days")
+        lang = request.config.getoption("--lang")
+        product = request.config.getoption("--product")
+        if product == "Flatbase":
+            fixture = FlatbaseFixture(browser)
+        elif product == "Voyage":
+            fixture = VoyageFixture(browser, days)
+        elif product == "GoodChoice":
+            fixture = GoodChoiceFixture(browser)
+        elif product == "TelemedPlus":
+            fixture = TelemedPlusFixture(browser)
+        elif product == "OncoProtect":
+            fixture = OncoProtectFixture(browser)
+        elif product == "CascoPro":
+            fixture = CascoProFixture(browser)
+        elif product == "CarHelp":
+            fixture = CarHelpFixture(browser)
+        elif product == "Mite":
+            fixture = MiteFixture(browser)
+        elif product == "CovidFin":
+            fixture = CovidFinFixture(browser)
+        elif product == "NoPanic":
+            fixture = NoPanicFixture(browser)
+        elif product == "GetVaccine":
+            fixture = GetVaccineFixture(browser)
+        elif product == "Voyage2":
+            fixture = Voyage2Fixture(browser)
+        elif product == "VoyageToRussia":
+            if lang not in ("RUS", "ENG"):
+                raise InvalidLanguageException
+            fixture = VoyageToRussiaFixture(browser, lang)
+    except InvalidLanguageException:
+        print("Error! Invalid language of frame specified!")
+        return
 
 
     yield fixture
