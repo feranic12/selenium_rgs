@@ -23,6 +23,7 @@ class VoyageToRussiaFixture(BaseFixture):
         self.driver.switch_to.frame("RESOLUTE_INSURANCE")
 
     def switch_language(self):
+        driver = self.driver
         if self.lang == "RUS":
             driver = self.driver
             WebDriverWait(driver, 10).until(EC.presence_of_element_located(VoyageToRussiaLocators.LanguageSwitcher))
