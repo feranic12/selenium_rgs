@@ -9,12 +9,12 @@ from selenium.webdriver.common import action_chains
 import time
 from utils import get_begin_day
 from Fixtures.BaseFixture import BaseFixture
-from Locators.TaxHelpLocators import TaxHelpLocators
+from Locators.HomeProtectLocators import HomeProtectLocators
 
 
-class TaxHelpFixture(BaseFixture):
+class HomeProtectFixture(BaseFixture):
     def __init__(self, browser):
-        self.target = r"https://testpartner.rgs.ru/b2c/product/build/test-taxHelp.html"
+        self.target = r"https://testpartner.rgs.ru/b2c/product/build/test-homeProtect.html"
         self.basic_setup(browser)
 
     def open_page(self):
@@ -23,37 +23,45 @@ class TaxHelpFixture(BaseFixture):
 
     def conditions(self):
         driver = self.driver
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(TaxHelpLocators.BuyButton))
-        driver.find_element(*TaxHelpLocators.BuyButton).click()
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(HomeProtectLocators.BuyButton))
+        driver.find_element(*HomeProtectLocators.BuyButton).click()
+
+    def insurance_object(self):
+        driver = self.driver
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(HomeProtectLocators.AddressCDI))
+        element = driver.find_element(*HomeProtectLocators.AddressCDI)
+        element.send_keys("г Москва, г Зеленоград, пл Юности, д 1")
+        time.sleep(1)
+        element.send_keys(Keys.ARROW_DOWN)
+        time.sleep(1)
+        element.send_keys(Keys.ENTER)
+        time.sleep(1)
+        driver.find_element(*HomeProtectLocators.ButtonContinue).click()
 
     def insurer_info(self):
         driver = self.driver
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.NAME, "content.policyHolder.lastName")))
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.NAME, "content.policyHolder.firstName")))
         driver.find_element_by_name("content.policyHolder.lastName").send_keys(u"Петров")
         driver.find_element_by_name("content.policyHolder.firstName").send_keys(u"Петр")
         driver.find_element_by_name("content.policyHolder.middleName").send_keys(u"Петрович")
         driver.find_element_by_name("content.policyHolder.dob").send_keys("01011990")
         driver.find_element_by_name("content.policyHolder.phone").send_keys("1231231212")
-        driver.find_element(*TaxHelpLocators.InsurerMale).click()
+        driver.find_element_by_xpath("(//button[@type='button'])[2]").click()
         driver.find_element_by_name("content.policyHolder.email").send_keys("knikitin@avinfors.ru")
         driver.find_element_by_name("content.policyHolder.email2").send_keys("knikitin@avinfors.ru")
+        driver.find_element_by_xpath("//div[@id='RI-product-steps']/div[3]/div/div[2]/div[2]/div").click()
         driver.find_element_by_name("content.policyHolder.document.seria").send_keys("1234")
-        driver.find_element_by_name("content.policyHolder.document.number").send_keys("123456")
-        driver.find_element(*TaxHelpLocators.ButtonContinue).click()
-
-    def insured_info(self):
-        driver = self.driver
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(TaxHelpLocators.ButtonContinue))
-        driver.find_element(*TaxHelpLocators.ButtonContinue).click()
+        driver.find_element_by_xpath("//div[@id='RI-product-steps']/div[3]/div/div[2]/div[3]/div").click()
+        driver.find_element_by_name("content.policyHolder.document.number").send_keys("123123")
+        driver.find_element_by_xpath("(//button[@type='button'])[4]").click()
 
     def agree(self):
         driver = self.driver
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH,
-                "//div[@id='RI-product-steps']/div[4]/div/div/div/div/div/div/label" )))
-        driver.find_element_by_xpath("//div[@id='RI-product-steps']/div[4]/div/div/div/div/div/div/label").click()
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(HomeProtectLocators.AcceptAllInput))
+        driver.find_element(*HomeProtectLocators.AcceptAllInput).click()
 
     def fill_frame(self):
         self.conditions()
+        self.insurance_object()
         self.insurer_info()
-        self.insured_info()
         self.agree()
