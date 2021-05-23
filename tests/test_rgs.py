@@ -13,11 +13,11 @@ from Fixtures.NoPanicFixture import NoPanicFixture
 from Fixtures.GetVaccineFixture import GetVaccineFixture
 from Fixtures.Voyage2Fixture import Voyage2Fixture
 from Fixtures.VoyageToRussiaFixture import VoyageToRussiaFixture
+from Fixtures.TaxHelpFixture import TaxHelpFixture
 from utils import InvalidLanguageException
 
 @pytest.fixture
 def fix(request, scope='session'):
-
     try:
         browser = request.config.getoption("--browser")
         days = request.config.getoption("--days")
@@ -51,6 +51,8 @@ def fix(request, scope='session'):
             if lang not in ("RUS", "ENG"):
                 raise InvalidLanguageException
             fixture = VoyageToRussiaFixture(browser, lang)
+        elif product == "TaxHelp":
+            fixture = TaxHelpFixture(browser)
     except InvalidLanguageException:
         print("Error! Invalid language of frame specified!")
         return
