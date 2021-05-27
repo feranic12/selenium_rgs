@@ -29,6 +29,8 @@ def fix(request):
     request.param.destroy()
 
 
+@pytest.mark.parametrize('fix', fixtures)
 def test_rgs_parametrized(fix):
     fix.open_page()
     fix.fill_frame()
+    fix.destroy()
