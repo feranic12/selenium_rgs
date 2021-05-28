@@ -17,7 +17,7 @@ class NoPanicFixture(BaseFixture):
         self.basic_setup(browser)
 
     def open_page(self):
-        self.open_page(self)
+        BaseFixture.open_page(self)
         self.driver.switch_to.frame("RESOLUTE_INSURANCE")
 
     def first_block(self):
