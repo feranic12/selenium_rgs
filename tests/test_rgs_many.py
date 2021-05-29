@@ -17,20 +17,24 @@ from Fixtures.TaxHelpFixture import TaxHelpFixture
 from Fixtures.HomeProtectFixture import HomeProtectFixture
 from utils import InvalidLanguageException
 
-fixtures = (FlatbaseFixture("chrome"),
-            GoodChoiceFixture("chrome"),
-            TelemedPlusFixture("chrome"))
+fixtures = (VoyageFixture("chrome", 5),
+            TelemedPlusFixture("chrome"),
+            OncoProtectFixture("chrome"))
 
 
-@pytest.fixture(params = fixtures)
+def id_func(fixture_value):
+    t = fixture_value
+    return "Fixture {0}".format(t)
+
+
+@pytest.fixture(params = fixtures, ids=id_func)
 def fix(request):
     yield request.param
     # request.addfinalizer(fixture.destroy)
     request.param.destroy()
 
 
-@pytest.mark.parametrize('fix', fixtures)
-def test_rgs_parametrized(fix):
+def test_rgs_many(fix):
     fix.open_page()
     fix.fill_frame()
     fix.destroy()
