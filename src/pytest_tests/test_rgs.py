@@ -17,6 +17,7 @@ from Fixtures.TaxHelpFixture import TaxHelpFixture
 from Fixtures.HomeProtectFixture import HomeProtectFixture
 from utils import InvalidLanguageException
 
+
 @pytest.fixture
 def fix(request, scope='session'):
     try:
@@ -59,7 +60,6 @@ def fix(request, scope='session'):
     except InvalidLanguageException:
         print("Error! Invalid language of frame specified!")
         return
-
 
     yield fixture
 
