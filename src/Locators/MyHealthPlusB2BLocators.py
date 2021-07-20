@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 
-class MyHealthLocators:
+
+class MyHealthPlusB2BLocators:
     BuyButton = (By.CSS_SELECTOR, "table.mt-3 td:nth-child(3) > button")
     InsurerLastname = (By.NAME, "content.policyHolder.lastName")
     InsurerFirstname = (By.NAME, "content.policyHolder.firstName")

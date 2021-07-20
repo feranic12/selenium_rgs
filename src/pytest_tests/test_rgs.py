@@ -15,7 +15,7 @@ from Fixtures.Voyage2Fixture import Voyage2Fixture
 from Fixtures.VoyageToRussiaFixture import VoyageToRussiaFixture
 from Fixtures.TaxHelpFixture import TaxHelpFixture
 from Fixtures.HomeProtectFixture import HomeProtectFixture
-from Fixtures.MyHealthFixture import MyHealthFixture
+from Fixtures.MyHealthPlusB2BFixture import MyHealthPlusB2BFixture
 from Fixtures.TelemedMyHealthFixture import TelemedMyHealthFixture
 from utils import InvalidLanguageException
 
@@ -59,8 +59,8 @@ def fix(request, scope='session'):
             fixture = TaxHelpFixture(browser)
         elif product == "HomeProtect":
             fixture = HomeProtectFixture(browser)
-        elif product == "MyHealth":
-            fixture = MyHealthFixture(browser)
+        elif product == "MyHealthPlusB2B":
+            fixture = MyHealthPlusB2BFixture(browser)
         elif product == "TelemedMyHealth":
             fixture = TelemedMyHealthFixture(browser)
     except InvalidLanguageException:

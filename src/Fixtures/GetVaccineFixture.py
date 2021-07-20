@@ -14,7 +14,7 @@ from Locators.GetVaccineLocators import GetVaccineLocators
 
 class GetVaccineFixture(BaseFixture):
     def __init__(self, browser):
-        self.target = r"https://testpartner.rgs.ru/b2c/product/build/test-getVaccine.html"
+        self.target = r"https://testpartner.rgs.ru/b2c/product/build/test-getVaccine.html?p=art"
         self.basic_setup(browser)
 
     def open_page(self):
