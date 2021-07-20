@@ -25,11 +25,11 @@ class TelemedMyHealthFixture(BaseFixture):
 
     def conditions(self):
         driver = self.driver
-        driver.find_element_by_xpath("//button[@type='button']").click()
+        driver.find_element_by_css_selector("div.table-responsive>table>tfoot td:nth-child(2)>button").click()
 
     def insurer_info(self):
         driver = self.driver
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.NAME("content.policyHolder.lastName"))))
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.NAME, "content.policyHolder.lastName")))
         driver.find_element_by_name("content.policyHolder.lastName").click()
         driver.find_element_by_name("content.policyHolder.lastName").clear()
         driver.find_element_by_name("content.policyHolder.lastName").send_keys(u"Петров")
