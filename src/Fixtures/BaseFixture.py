@@ -22,6 +22,7 @@ class BaseFixture:
             self.driver = webdriver.Ie(executable_path=config.iedriver_path)
         elif browser == "opera":
             self.driver = webdriver.Opera(executable_path=config.operadriver_path)
+        self.driver.implicitly_wait(30)
         self.actions = action_chains.ActionChains(self.driver)
 
     def open_page(self):
