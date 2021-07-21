@@ -11,7 +11,7 @@ from selenium.webdriver.chrome.options import Options as ChromeOptions
 import time
 from utils import get_begin_day
 from Fixtures.BaseFixture import BaseFixture
-from Locators.OncoProtectLocators import OncoProtectLocators
+from Locators.TelemedMyHealthLocators import TelemedMyHealthLocators
 
 
 class TelemedMyHealthFixture(BaseFixture):
@@ -25,40 +25,22 @@ class TelemedMyHealthFixture(BaseFixture):
 
     def conditions(self):
         driver = self.driver
-        driver.find_element_by_css_selector("div.table-responsive>table>tfoot td:nth-child(2)>button").click()
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(TelemedMyHealthLocators.BuyButton))
+        driver.find_element(*TelemedMyHealthLocators.BuyButton).click()
 
     def insurer_info(self):
         driver = self.driver
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.NAME, "content.policyHolder.lastName")))
-        driver.find_element_by_name("content.policyHolder.lastName").click()
-        driver.find_element_by_name("content.policyHolder.lastName").clear()
-        driver.find_element_by_name("content.policyHolder.lastName").send_keys(u"Петров")
-        driver.find_element_by_name("content.policyHolder.firstName").clear()
-        driver.find_element_by_name("content.policyHolder.firstName").send_keys(u"Петр")
-        driver.find_element_by_name("content.policyHolder.middleName").clear()
-        driver.find_element_by_name("content.policyHolder.middleName").send_keys(u"Петрович")
-        driver.find_element_by_xpath(
-            "//div[@id='RI-product-steps']/div[2]/div/div[2]/div[5]/div/div/div/div/button").click()
-        driver.find_element_by_xpath(
-            u"(.//*[normalize-space(text()) and normalize-space(.)='вс'])[1]/following::button[6]").click()
-        driver.find_element_by_name("content.policyHolder.phone").click()
-        driver.find_element_by_name("content.policyHolder.phone").clear()
-        driver.find_element_by_name("content.policyHolder.phone").send_keys("+7(123)123-21-32")
-        driver.find_element_by_xpath(
-            "//div[@id='RI-product-steps']/div[2]/div/div[2]/div[7]/div/div/div/button").click()
-        driver.find_element_by_name("content.policyHolder.email").click()
-        driver.find_element_by_name("content.policyHolder.email").clear()
-        driver.find_element_by_name("content.policyHolder.email").send_keys("knikitin@avinfors.ru")
-        driver.find_element_by_name("content.policyHolder.email2").clear()
-        driver.find_element_by_name("content.policyHolder.email2").send_keys("knikitin@avinfors.ru")
-        driver.find_element_by_xpath("//div[@id='RI-product-steps']/div[2]/div/div[3]/div[2]/div").click()
-        driver.find_element_by_name("content.policyHolder.document.seria").click()
-        driver.find_element_by_name("content.policyHolder.document.seria").clear()
-        driver.find_element_by_name("content.policyHolder.document.seria").send_keys("1234")
-        driver.find_element_by_name("content.policyHolder.document.number").click()
-        driver.find_element_by_name("content.policyHolder.document.number").clear()
-        driver.find_element_by_name("content.policyHolder.document.number").send_keys("123123")
-        driver.find_element_by_xpath("//div[@id='RI-product-steps']/div[2]/div/div[5]/button").click()
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(TelemedMyHealthLocators.InsurerLastName))
+        driver.find_element(*TelemedMyHealthLocators.InsurerLastName).send_keys(u"Петров")
+        driver.find_element(*TelemedMyHealthLocators.InsurerFirstName).send_keys(u"Петр")
+        driver.find_element(*TelemedMyHealthLocators.InsurerMiddleName).send_keys(u"Петрович")
+        driver.find_element(*TelemedMyHealthLocators.InsurerMale).click()
+        driver.find_element(*TelemedMyHealthLocators.InsurerPhone).send_keys("+7(123)123-21-32")
+        driver.find_element(*TelemedMyHealthLocators.InsurerEMail).send_keys("knikitin@avinfors.ru")
+        driver.find_element(*TelemedMyHealthLocators.InsurerEMail2).send_keys("knikitin@avinfors.ru")
+        driver.find_element(*TelemedMyHealthLocators.InsurerPassportSeria).send_keys("1234")
+        driver.find_element(*TelemedMyHealthLocators.InsurerPassportNumber).send_keys("123123")
+        driver.find_element(*TelemedMyHealthLocators.ContinueButton).click()
 
     def insured_info(self):
         driver = self.driver
