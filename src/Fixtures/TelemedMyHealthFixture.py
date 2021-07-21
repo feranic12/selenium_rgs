@@ -34,6 +34,7 @@ class TelemedMyHealthFixture(BaseFixture):
         driver.find_element(*TelemedMyHealthLocators.InsurerLastName).send_keys(u"Петров")
         driver.find_element(*TelemedMyHealthLocators.InsurerFirstName).send_keys(u"Петр")
         driver.find_element(*TelemedMyHealthLocators.InsurerMiddleName).send_keys(u"Петрович")
+        driver.find_element(*TelemedMyHealthLocators.InsurerDob).send_keys("01011990")
         driver.find_element(*TelemedMyHealthLocators.InsurerMale).click()
         driver.find_element(*TelemedMyHealthLocators.InsurerPhone).send_keys("+7(123)123-21-32")
         driver.find_element(*TelemedMyHealthLocators.InsurerEMail).send_keys("knikitin@avinfors.ru")
