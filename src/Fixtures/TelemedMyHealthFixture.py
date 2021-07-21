@@ -45,11 +45,11 @@ class TelemedMyHealthFixture(BaseFixture):
 
     def insured_info(self):
         driver = self.driver
-        driver.find_element(*TelemedMyHealthLocators.ContinueButton2.click()
+        driver.find_element(*TelemedMyHealthLocators.ContinueButton2).click()
 
     def agree(self):
         driver = self.driver
-        driver.find_element(*TelemedMyHealthLocators.Atree).click()
+        driver.find_element(*TelemedMyHealthLocators.Agree).click()
 
     def fill_frame(self):
         driver = self.driver
