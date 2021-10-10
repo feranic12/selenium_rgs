@@ -28,11 +28,15 @@ class YourProtectFixture(BaseFixture):
         driver.find_element(*YourProtectLocators.Sport_Yes).click()
         driver.find_element(*YourProtectLocators.Term_Months_3).click()
         driver.find_element(*YourProtectLocators.Continue_Button_1).click()
-
+    
     def insured_info(self):
         driver = self.driver
         WebDriverWait(driver, 10).until(EC.presence_of_element_located(YourProtectLocators.Sports_Checkbox))
         driver.find_element(*YourProtectLocators.Sports_Checkbox).click()
+        driver.find_element(By.NAME, "content.insuredPerson.list[0].lastName").send_keys("Петров")
+        driver.find_element(By.NAME, "content.insuredPerson.list[0].firstName").send_keys("Пётр")
+        driver.find_element(By.NAME, "content.insuredPerson.list[0].middleName").send_keys("Петрович")
+        driver.find_element(By.NAME, "content.insuredPerson.list[0].dob").send_keys("01011990")
 
     def fill_frame(self):
         self.conditions()
