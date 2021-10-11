@@ -18,6 +18,7 @@ from Fixtures.HomeProtectFixture import HomeProtectFixture
 from Fixtures.MyHealthPlusB2BFixture import MyHealthPlusB2BFixture
 from Fixtures.TelemedMyHealthFixture import TelemedMyHealthFixture
 from Fixtures.YourProtectFixture import YourProtectFixture
+from Fixtures.EosagoFixture import EosagoFixture
 from utils import InvalidLanguageException
 
 
@@ -66,6 +67,8 @@ def fix(request, scope='session'):
             fixture = TelemedMyHealthFixture(browser)
         elif product == "YourProtect":
             fixture = YourProtectFixture(browser)
+        elif product == "Eosago":
+            fixture = EosagoFixture(browser)
     except InvalidLanguageException:
         print("Error! Invalid language of frame specified!")
         return
