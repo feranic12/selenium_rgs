@@ -8,3 +8,6 @@ class HouseflatLocators:
     Cadastre = (By.NAME, "content.object.data.cadastreNumber")
     Program5 = (By.XPATH, ".//div[@class=\"table-responsive\"]//table//tr[4]/td[2]/button[1]")
     ContinueButton = (By.CSS_SELECTOR, "div.ml-auto > button")
+    MaleButton = (By.CSS_SELECTOR, "div[data-name=\"content.policyHolder.sex\"] button:first-child")
+    AddressSame = (By.CSS_SELECTOR, "label[for=\"content.policyHolder.address.registration.same_custom_input\"]")
+    Accept = (By.CSS_SELECTOR, "label[for=\"content.temp.accept_custom_input\"]")
