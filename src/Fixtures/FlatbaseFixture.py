@@ -7,7 +7,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common import action_chains
 import time
-from utils import get_begin_day
+from utils import get_begin_day, enter_address_cdi
 from Fixtures.BaseFixture import BaseFixture
 from Locators.FlatbaseLocators import FlatbaseLocators
 
@@ -44,12 +44,7 @@ class FlatbaseFixture(BaseFixture):
         element = driver.find_element(*FlatbaseLocators.Begin_Date_Input)
         element.send_keys(get_begin_day(10))
         element = driver.find_element(*FlatbaseLocators.Address_CDI)
-        element.send_keys("г Москва, г Зеленоград, пл Юности, д 1")
-        time.sleep(1)
-        element.send_keys(Keys.ARROW_DOWN)
-        time.sleep(1)
-        element.send_keys(Keys.ENTER)
-        time.sleep(1)
+        enter_address_cdi(element, "г Москва, г Зеленоград, пл Юности, д 1" )
         element = driver.find_element(*FlatbaseLocators.Flat_Input)
         element.send_keys("4")
         element = driver.find_element(*FlatbaseLocators.Calc_Next_Button)

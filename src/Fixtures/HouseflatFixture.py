@@ -7,7 +7,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common import action_chains
 import time
-from utils import get_begin_day
+from utils import get_begin_day, enter_address_cdi
 from Fixtures.BaseFixture import BaseFixture
 from Locators.HouseflatLocators import HouseflatLocators
 
@@ -22,7 +22,15 @@ class HouseflatFixture(BaseFixture):
         self.driver.switch_to.frame("RESOLUTE_INSURANCE")
 
     def conditions(self):
-        pass
+        driver = self.driver
+        WebDriverWait(driver,10).until(EC.element_to_be_clickable(HouseflatLocators.FlatButton))
+        driver.find_element(*HouseflatLocators.FlatButton).click()
+        element = driver.find_element(*HouseflatLocators.AddressCDI)
+        enter_address_cdi(element, "г Москва, г Зеленоград, пл Юности, д 1")
+        driver.find_element(*HouseflatLocators.Flat).send_keys("34")
+        driver.find_element(*HouseflatLocators.Cadastre).send_keys("123123123")
+        driver.find_element(*HouseflatLocators.Program5).click()
+        driver.find_element(*HouseflatLocators.ContinueButton).click()
 
     def fill_frame(self):
         self.conditions()
