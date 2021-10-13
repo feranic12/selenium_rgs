@@ -24,8 +24,8 @@ class EosagoFixture(BaseFixture):
     def vehicle(self):
         driver = self.driver
         WebDriverWait(driver, 10).until(EC.element_to_be_clickable(EosagoLocators.Capacity))
-        driver.find_element(*EosagoLocators.Capacity).send_keys("120")
-        driver.find_element(*EosagoLocators.Mark).send_keys("Acura" + Keys.ENTER)
+        driver.find_element(*EosagoLocators.Capacity).send_keys("120" + Keys.ENTER)
+        driver.find_element(*EosagoLocators.Mark).click().send_keys("Acura" + Keys.ENTER)
         driver.find_element(*EosagoLocators.ProdYear).send_keys("2012")
         WebDriverWait(driver, 10).until(EC.element_to_be_clickable(EosagoLocators.Model))
         driver.find_element(*EosagoLocators.Model).send_keys("NSX" + Keys.ENTER)
