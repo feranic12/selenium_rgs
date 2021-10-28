@@ -16,7 +16,7 @@ class VoyageFixture(BaseFixture):
     def __init__(self, browser, days):
         self.days = days
         self.target = r"https://testpartner.rgs.ru/b2c/product/build/test-voyage.html"
-        self.basic_setup(browser)
+        BaseFixture.__init__(self, browser)
 
     def open_page(self):
         BaseFixture.open_page(self)
