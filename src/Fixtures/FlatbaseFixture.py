@@ -15,7 +15,7 @@ from Locators.FlatbaseLocators import FlatbaseLocators
 class FlatbaseFixture(BaseFixture):
     def __init__(self, browser):
         self.target = r"https://testpartner.rgs.ru/b2c/product/build/test-flatbase.html"
-        self.basic_setup(browser)
+        BaseFixture.__init__(self, browser)
 
     def open_page(self):
         BaseFixture.open_page(self)

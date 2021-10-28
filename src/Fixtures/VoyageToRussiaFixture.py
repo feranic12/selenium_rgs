@@ -15,7 +15,7 @@ from Locators.VoyageToRussiaLocators import VoyageToRussiaLocators
 class VoyageToRussiaFixture(BaseFixture):
     def __init__(self, browser, lang):
         self.target = r"https://testpartner.rgs.ru/b2c/product/build/test-voyageToRussia.html"
-        self.basic_setup(browser)
+        BaseFixture.__init__(self, browser)
         self.lang = lang
 
     def open_page(self):

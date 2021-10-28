@@ -12,7 +12,7 @@ import time
 
 
 class BaseFixture:
-    def basic_setup(self, browser):
+    def __init__(self, browser):
         if browser == "chrome":
             chrome_options = ChromeOptions()
             self.driver = webdriver.Chrome(executable_path=config.chromedriver_path, options=chrome_options)
