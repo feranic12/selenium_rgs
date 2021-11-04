@@ -37,4 +37,3 @@ def fix(request):
 def test_rgs_many(fix):
     fix.open_page()
     fix.fill_frame()
-    fix.destroy()
