@@ -1,26 +1,5 @@
 # -*- coding: utf-8 -*-
 import pytest
-from Fixtures.FlatbaseFixture import FlatbaseFixture
-from Fixtures.VoyageFixture import VoyageFixture
-from Fixtures.GoodChoiceFixture import GoodChoiceFixture
-from Fixtures.TelemedPlusFixture import TelemedPlusFixture
-from Fixtures.OncoProtectFixture import OncoProtectFixture
-from Fixtures.CascoProFixture import CascoProFixture
-from Fixtures.CarHelpFixture import CarHelpFixture
-from Fixtures.MiteFixture import MiteFixture
-from Fixtures.CovidFinFixture import CovidFinFixture
-from Fixtures.NoPanicFixture import NoPanicFixture
-from Fixtures.GetVaccineFixture import GetVaccineFixture
-from Fixtures.Voyage2Fixture import Voyage2Fixture
-from Fixtures.VoyageToRussiaFixture import VoyageToRussiaFixture
-from Fixtures.TaxHelpFixture import TaxHelpFixture
-from Fixtures.HomeProtectFixture import HomeProtectFixture
-from Fixtures.MyHealthPlusB2BFixture import MyHealthPlusB2BFixture
-from Fixtures.TelemedMyHealthFixture import TelemedMyHealthFixture
-from Fixtures.YourProtectFixture import YourProtectFixture
-from Fixtures.EosagoFixture import EosagoFixture
-from Fixtures.HouseflatFixture import HouseflatFixture
-from Fixtures.MyStabilityFixture import MyStabilityFixture
 from utils import InvalidLanguageException
 
 
@@ -32,48 +11,69 @@ def fix(request, scope='session'):
         lang = request.config.getoption("--lang")
         product = request.config.getoption("--product")
         if product == "Flatbase":
+            from Fixtures.FlatbaseFixture import FlatbaseFixture
             fixture = FlatbaseFixture(browser)
         elif product == "Voyage":
+            from Fixtures.VoyageFixture import VoyageFixture
             fixture = VoyageFixture(browser, days)
         elif product == "GoodChoice":
+            from Fixtures.GoodChoiceFixture import GoodChoiceFixture
             fixture = GoodChoiceFixture(browser)
         elif product == "TelemedPlus":
+            from Fixtures.TelemedPlusFixture import TelemedPlusFixture
             fixture = TelemedPlusFixture(browser)
         elif product == "OncoProtect":
+            from Fixtures.OncoProtectFixture import OncoProtectFixture
             fixture = OncoProtectFixture(browser)
         elif product == "CascoPro":
+            from Fixtures.CascoProFixture import CascoProFixture
             fixture = CascoProFixture(browser)
         elif product == "CarHelp":
+            from Fixtures.CarHelpFixture import CarHelpFixture
             fixture = CarHelpFixture(browser)
         elif product == "Mite":
+            from Fixtures.MiteFixture import MiteFixture
             fixture = MiteFixture(browser)
         elif product == "CovidFin":
+            from Fixtures.CovidFinFixture import CovidFinFixture
             fixture = CovidFinFixture(browser)
         elif product == "NoPanic":
+            from Fixtures.NoPanicFixture import NoPanicFixture
             fixture = NoPanicFixture(browser)
         elif product == "GetVaccine":
+            from Fixtures.GetVaccineFixture import GetVaccineFixture
             fixture = GetVaccineFixture(browser)
         elif product == "Voyage2":
+            from Fixtures.Voyage2Fixture import Voyage2Fixture
             fixture = Voyage2Fixture(browser)
         elif product == "VoyageToRussia":
             if lang not in ("RUS", "ENG"):
                 raise InvalidLanguageException
+            from Fixtures.VoyageToRussiaFixture import VoyageToRussiaFixture
             fixture = VoyageToRussiaFixture(browser, lang)
         elif product == "TaxHelp":
+            from Fixtures.TaxHelpFixture import TaxHelpFixture
             fixture = TaxHelpFixture(browser)
         elif product == "HomeProtect":
+            from Fixtures.HomeProtectFixture import HomeProtectFixture
             fixture = HomeProtectFixture(browser)
         elif product == "MyHealthPlusB2B":
+            from Fixtures.MyHealthPlusB2BFixture import MyHealthPlusB2BFixture
             fixture = MyHealthPlusB2BFixture(browser)
         elif product == "TelemedMyHealth":
+            from Fixtures.TelemedMyHealthFixture import TelemedMyHealthFixture
             fixture = TelemedMyHealthFixture(browser)
         elif product == "YourProtect":
+            from Fixtures.YourProtectFixture import YourProtectFixture
             fixture = YourProtectFixture(browser)
         elif product == "Eosago":
+            from Fixtures.EosagoFixture import EosagoFixture
             fixture = EosagoFixture(browser)
         elif product == "Houseflat":
+            from Fixtures.HouseflatFixture import HouseflatFixture
             fixture = HouseflatFixture(browser)
         elif product == "MyStability":
+            from Fixtures.MyStabilityFixture import MyStabilityFixture
             fixture = MyStabilityFixture(browser)
     except InvalidLanguageException:
         print("Error! Invalid language of frame specified!")
