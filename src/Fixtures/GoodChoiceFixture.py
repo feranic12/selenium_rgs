@@ -41,8 +41,8 @@ class GoodChoiceFixture(BaseFixture):
         element.send_keys(Keys.ARROW_DOWN)
         time.sleep(1)
         element.send_keys(Keys.ENTER)
-        element = driver.find_element(*GoodChoiceLocators.Flat)
-        element.send_keys("15")
+        #element = driver.find_element(*GoodChoiceLocators.Flat)
+        #element.send_keys("15")
         element = driver.find_element(*GoodChoiceLocators.Continue_Button2)
         element.click()
 
