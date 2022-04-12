@@ -3,7 +3,8 @@ from selenium.webdriver.common.by import By
 
 class TelemedPlusLocators:
     Button_Prolongation_False = (By.CSS_SELECTOR, "div[data-name=\"content.contract.data.prolongation.is\"] button:first-child")
-    ButtonBuy1 = (By.XPATH, "//table//tr[9]/td[2]/button")
+    #ButtonBuy1 = (By.XPATH, "//table//tr[9]/td[2]/button")
+    ButtonBuy1 = (By.CSS_SELECTOR, "div.h-100 > div:last-child > button")
     Surname = (By.NAME, "content.policyHolder.lastName")
     First_Name = (By.NAME,"content.policyHolder.firstName")
     Middle_Name = (By.NAME,"content.policyHolder.middleName")
