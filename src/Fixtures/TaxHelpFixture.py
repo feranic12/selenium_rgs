@@ -53,7 +53,6 @@ class TaxHelpFixture(BaseFixture):
         driver.find_element_by_xpath("//div[@id='RI-product-steps']/div[4]/div/div/div/div/div/div/label").click()
 
     def fill_frame(self):
-        self.conditions()
         self.insurer_info()
         self.insured_info()
         self.agree()
