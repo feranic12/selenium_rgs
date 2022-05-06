@@ -59,8 +59,6 @@ class GoodChoiceFixture(BaseFixture):
         element.send_keys("01011990")
         element = driver.find_element(*GoodChoiceLocators.Phone)
         element.send_keys("1231231212")
-        element = driver.find_element(*GoodChoiceLocators.Male)
-        element.click()
         element = driver.find_element(*GoodChoiceLocators.EMail1)
         element.send_keys("knikitin@avinfors.ru")
         element = driver.find_element(*GoodChoiceLocators.EMail2)
