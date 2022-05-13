@@ -83,7 +83,7 @@ class VoyageFixture(BaseFixture):
         element = driver.find_element(*VoyageLocators.Insured0_Firstname_Input)
         element.send_keys("Пётр")
         element = driver.find_element(*VoyageLocators.Insured0_Middlename_Input)
-        element.send_keys("Пётрович")
+        element.send_keys("Петрович")
         element = driver.find_element(*VoyageLocators.Insured0_Lastname_Lat_Input)
         element.send_keys("Petrov")
         element = driver.find_element(*VoyageLocators.Insured0_Firstname_Lat_Input)
