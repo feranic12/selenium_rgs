@@ -13,7 +13,7 @@ from Locators.TelemedPlusLocators import TelemedPlusLocators
 
 class TelemedPlusFixture(BaseFixture):
     def __init__(self, browser):
-        self.target = r"https://testpartner.rgs.ru/b2c/product/build/test-telemedPlusB2B.html?p=art"
+        self.target = r"https://testpartner.rgs.ru/b2c/product/build/test-telemedPlusB2B.html"
         BaseFixture.__init__(self, browser)
 
     def open_page(self):
