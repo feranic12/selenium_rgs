@@ -5,9 +5,9 @@ from selenium.webdriver.support import expected_conditions as EC # available sin
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
-from selenium.webdriver.common import action_chains
+from selenium.webdriver.common.action_chains import ActionChains
 import time
-from utils import get_begin_day, enter_address_cdi
+from utils import get_begin_day, enter_address_cdi, enter_address_new1
 from Fixtures.BaseFixture import BaseFixture
 from Locators.HouseflatLocators import HouseflatLocators
 
@@ -25,8 +25,9 @@ class HouseflatFixture(BaseFixture):
         driver = self.driver
         WebDriverWait(driver, 10).until(EC.element_to_be_clickable(HouseflatLocators.FlatButton))
         driver.find_element(*HouseflatLocators.FlatButton).click()
-        element = driver.find_element(*HouseflatLocators.AddressCDI)
-        enter_address_cdi(element, "г Москва, г Зеленоград, пл Юности, д 2 стр 1")
+        element = driver.find_element(*HouseflatLocators.AddressNew1)
+        enter_address_new1(element, "г Москва", ActionChains(driver))
+        driver.find_element(*HouseflatLocators.AddressNew2).send_keys("Площадь Юности, д 34" + Keys.ENTER)
         driver.find_element(*HouseflatLocators.Flat).send_keys("34")
         driver.find_element(*HouseflatLocators.Cadastre).send_keys("123123123")
         driver.find_element(*HouseflatLocators.Program5).click()

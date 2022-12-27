@@ -15,7 +15,7 @@ from Locators.VoyageLocators import VoyageLocators
 class VoyageFixture(BaseFixture):
     def __init__(self, browser, days):
         self.days = days
-        self.target = r"https://testpartner.rgs.ru/b2c/product/build/test-voyage.html"
+        self.target = r"https://test2partner.rgs.ru/b2c/product/build/test-voyage.html"
         BaseFixture.__init__(self, browser)
 
     def open_page(self):

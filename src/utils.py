@@ -1,5 +1,6 @@
 from datetime import datetime,timedelta
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 
@@ -16,6 +17,13 @@ def enter_address_cdi(element, address):
     element.send_keys(Keys.ARROW_DOWN)
     time.sleep(1)
     element.send_keys(Keys.ENTER)
+    time.sleep(1)
+
+
+def enter_address_new1(element, address, actions):
+    element.send_keys(address)
+    time.sleep(1)
+    actions.move_by_offset(300,500).click().perform()
     time.sleep(1)
 
 

@@ -14,7 +14,7 @@ from Locators.FlatbaseLocators import FlatbaseLocators
 
 class FlatbaseFixture(BaseFixture):
     def __init__(self, browser):
-        self.target = r"https://testpartner.rgs.ru/b2c/product/build/test-flatbase.html"
+        self.target = r"https://test2partner.rgs.ru/b2c/product/build/test-flatbase.html"
         BaseFixture.__init__(self, browser)
 
     def open_page(self):
@@ -26,6 +26,7 @@ class FlatbaseFixture(BaseFixture):
         WebDriverWait(driver, 10).until(EC.element_to_be_clickable(FlatbaseLocators.Area_Input))
         element = driver.find_element(*FlatbaseLocators.Area_Input)
         element.send_keys("100")
+
         element = driver.find_element(*FlatbaseLocators.Region_Button)
         element.click()
         element = driver.find_element(*FlatbaseLocators.Owned_Button)
