@@ -4,7 +4,8 @@ from selenium.webdriver.common.by import By
 class GoodChoiceLocators:
     Button_Prolongation_False = (By.CSS_SELECTOR, "div[data-name=\"content.contract.data.prolongation.is\"] button:first-child")
     Button1 = (By.CSS_SELECTOR, "div.mt-3 tr:last-child>td:nth-child(2)>button")
-    Address_CDI = (By.CSS_SELECTOR, "input[data-name=\"content.object.data.address.registration.addressCdi\"]")
+    AddressNew1 = (By.NAME, "content.object.data.address.registration.city.full")
+    AddressNew2 = (By.NAME, "content.object.data.address.registration.addressCdi.short")
     Flat = (By.NAME, "content.object.data.address.registration.flat")
     Continue_Button2 = (By.CSS_SELECTOR, "div.text-right>button")
     Surname = (By.NAME, "content.policyHolder.lastName")

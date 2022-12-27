@@ -5,9 +5,9 @@ from selenium.webdriver.support import expected_conditions as EC # available sin
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
-from selenium.webdriver.common import action_chains
+from selenium.webdriver.common.action_chains import ActionChains
 import time
-from utils import get_begin_day
+from utils import get_begin_day, enter_address_new1
 from Fixtures.BaseFixture import BaseFixture
 from Locators.GoodChoiceLocators import GoodChoiceLocators
 
@@ -35,12 +35,9 @@ class GoodChoiceFixture(BaseFixture):
 
     def insurance_object(self):
         driver = self.driver
-        element = driver.find_element(*GoodChoiceLocators.Address_CDI)
-        element.send_keys("г Москва, г Зеленоград, пл Юности, д 1")
-        time.sleep(1)
-        element.send_keys(Keys.ARROW_DOWN)
-        time.sleep(1)
-        element.send_keys(Keys.ENTER)
+        element = driver.find_element(*GoodChoiceLocators.AddressNew1)
+        enter_address_new1(element, "г Москва", ActionChains(driver))
+        driver.find_element(*GoodChoiceLocators.AddressNew2).send_keys("Площадь Юности, д 34" + Keys.ENTER)
         #element = driver.find_element(*GoodChoiceLocators.Flat)
         #element.send_keys("15")
         element = driver.find_element(*GoodChoiceLocators.Continue_Button2)

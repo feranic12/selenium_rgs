@@ -5,16 +5,16 @@ from selenium.webdriver.support import expected_conditions as EC # available sin
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
-from selenium.webdriver.common import action_chains
+from selenium.webdriver.common.action_chains import ActionChains
 import time
-from utils import get_begin_day, enter_address_cdi
+from utils import get_begin_day, enter_address_new1
 from Fixtures.BaseFixture import BaseFixture
 from Locators.FlatbaseLocators import FlatbaseLocators
 
 
 class FlatbaseFixture(BaseFixture):
     def __init__(self, browser):
-        self.target = r"https://test2partner.rgs.ru/b2c/product/build/test-flatbase.html"
+        self.target = r"https://testpartner.rgs.ru/b2c/product/build/test-flatbase.html"
         BaseFixture.__init__(self, browser)
 
     def open_page(self):
@@ -44,8 +44,9 @@ class FlatbaseFixture(BaseFixture):
         WebDriverWait(driver,10).until(EC.element_to_be_clickable(FlatbaseLocators.Begin_Date_Input))
         element = driver.find_element(*FlatbaseLocators.Begin_Date_Input)
         element.send_keys(get_begin_day(10))
-        element = driver.find_element(*FlatbaseLocators.Address_CDI)
-        enter_address_cdi(element, "г Москва, г Зеленоград, пл Юности, д 1" )
+        element = driver.find_element(*FlatbaseLocators.AddressNew1)
+        enter_address_new1(element, "г Москва", ActionChains(driver))
+        driver.find_element(FlatbaseLocators.AddressNew2).send_keys("Площадь Юности, д 34" + Keys.ENTER)
         element = driver.find_element(*FlatbaseLocators.Flat_Input)
         element.send_keys("4")
         element = driver.find_element(*FlatbaseLocators.Calc_Next_Button)
