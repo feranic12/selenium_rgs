@@ -20,10 +20,10 @@ def enter_address_cdi(element, address):
     time.sleep(1)
 
 
-def enter_address_new1(element, address, actions):
+def enter_address_new1(element, address, actions, x , y):
     element.send_keys(address)
     time.sleep(1)
-    actions.move_by_offset(300,500).click().perform()
+    actions.move_by_offset(x, y).click().perform()
     time.sleep(1)
 
 

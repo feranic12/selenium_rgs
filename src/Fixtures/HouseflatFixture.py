@@ -26,7 +26,7 @@ class HouseflatFixture(BaseFixture):
         WebDriverWait(driver, 10).until(EC.element_to_be_clickable(HouseflatLocators.FlatButton))
         driver.find_element(*HouseflatLocators.FlatButton).click()
         element = driver.find_element(*HouseflatLocators.AddressNew1)
-        enter_address_new1(element, "г Москва", ActionChains(driver))
+        enter_address_new1(element, "г Москва", ActionChains(driver), 300, 500)
         driver.find_element(*HouseflatLocators.AddressNew2).send_keys("Площадь Юности, д 34" + Keys.ENTER)
         driver.find_element(*HouseflatLocators.Flat).send_keys("34")
         driver.find_element(*HouseflatLocators.Cadastre).send_keys("123123123")

@@ -36,7 +36,7 @@ class GoodChoiceFixture(BaseFixture):
     def insurance_object(self):
         driver = self.driver
         element = driver.find_element(*GoodChoiceLocators.AddressNew1)
-        enter_address_new1(element, "г Москва", ActionChains(driver))
+        enter_address_new1(element, "г Москва", ActionChains(driver), 300, 500)
         driver.find_element(*GoodChoiceLocators.AddressNew2).send_keys("Площадь Юности, д 34" + Keys.ENTER)
         #element = driver.find_element(*GoodChoiceLocators.Flat)
         #element.send_keys("15")
