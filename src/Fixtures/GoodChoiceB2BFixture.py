@@ -12,7 +12,7 @@ from Fixtures.BaseFixture import BaseFixture
 from Locators.GoodChoiceLocators import GoodChoiceLocators
 
 
-class GoodChoiceFixture(BaseFixture):
+class GoodChoiceB2BFixture(BaseFixture):
     def __init__(self, browser):
         self.target = r"https://testpartner.rgs.ru/b2c/product/build/test-goodChoiceB2B.html"
         BaseFixture.__init__(self, browser)

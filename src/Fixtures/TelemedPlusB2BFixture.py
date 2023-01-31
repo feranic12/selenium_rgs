@@ -11,7 +11,8 @@ from utils import get_begin_day
 from Fixtures.BaseFixture import BaseFixture
 from Locators.TelemedPlusLocators import TelemedPlusLocators
 
-class TelemedPlusFixture(BaseFixture):
+
+class TelemedPlusB2BFixture(BaseFixture):
     def __init__(self, browser):
         self.target = r"https://test2partner.rgs.ru/b2c/product/build/test-telemedPlusB2B.html"
         BaseFixture.__init__(self, browser)

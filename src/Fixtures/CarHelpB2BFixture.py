@@ -11,7 +11,7 @@ from Fixtures.BaseFixture import BaseFixture
 from Locators.CarHelpLocators import CarHelpLocators
 
 
-class CarHelpFixture(BaseFixture):
+class CarHelpB2BFixture(BaseFixture):
     def __init__(self, browser):
         self.target = r"https://testpartner.rgs.ru/b2c/product/build/test-carHelpB2B.html"
         BaseFixture.__init__(self, browser)

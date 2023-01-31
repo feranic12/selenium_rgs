@@ -11,7 +11,7 @@ from Fixtures.BaseFixture import BaseFixture
 from Locators.CascoProLocators import CascoProLocators
 
 
-class CascoProFixture(BaseFixture):
+class CascoProB2BFixture(BaseFixture):
     def __init__(self, browser):
         self.target = r"https://testpartner.rgs.ru/b2c/product/build/test-cascoProB2B.html"
         BaseFixture.__init__(self, browser)

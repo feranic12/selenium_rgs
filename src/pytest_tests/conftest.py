@@ -15,21 +15,21 @@ def fix(request, scope='session'):
         elif product == "Voyage":
             from Fixtures.VoyageFixture import VoyageFixture
             fixture = VoyageFixture(browser, days)
-        elif product == "GoodChoice":
-            from Fixtures.GoodChoiceFixture import GoodChoiceFixture
-            fixture = GoodChoiceFixture(browser)
-        elif product == "TelemedPlus":
-            from Fixtures.TelemedPlusFixture import TelemedPlusFixture
-            fixture = TelemedPlusFixture(browser)
-        elif product == "OncoProtect":
-            from Fixtures.OncoProtectFixture import OncoProtectFixture
-            fixture = OncoProtectFixture(browser)
-        elif product == "CascoPro":
-            from Fixtures.CascoProFixture import CascoProFixture
-            fixture = CascoProFixture(browser)
-        elif product == "CarHelp":
-            from Fixtures.CarHelpFixture import CarHelpFixture
-            fixture = CarHelpFixture(browser)
+        elif product == "GoodChoiceB2B":
+            from Fixtures.GoodChoiceB2BFixture import GoodChoiceB2BFixture
+            fixture = GoodChoiceB2BFixture(browser)
+        elif product == "TelemedPlusB2B":
+            from Fixtures.TelemedPlusB2BFixture import TelemedPlusB2BFixture
+            fixture = TelemedPlusB2BFixture(browser)
+        elif product == "OncoProtectB2B":
+            from Fixtures.OncoProtectB2BFixture import OncoProtectB2BFixture
+            fixture = OncoProtectB2BFixture(browser)
+        elif product == "CascoProB2B":
+            from Fixtures.CascoProB2BFixture import CascoProB2BFixture
+            fixture = CascoProB2BFixture(browser)
+        elif product == "CarHelpB2B":
+            from Fixtures.CarHelpB2BFixture import CarHelpB2BFixture
+            fixture = CarHelpB2BFixture(browser)
         elif product == "Mite":
             from Fixtures.MiteFixture import MiteFixture
             fixture = MiteFixture(browser)

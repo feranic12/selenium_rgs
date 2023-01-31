@@ -11,7 +11,8 @@ from utils import get_begin_day
 from Fixtures.BaseFixture import BaseFixture
 from Locators.OncoProtectLocators import OncoProtectLocators
 
-class OncoProtectFixture(BaseFixture):
+
+class OncoProtectB2BFixture(BaseFixture):
     def __init__(self, browser):
         self.target = r"https://testpartner.rgs.ru/b2c/product/build/test-oncoProtectB2B.html"
         BaseFixture.__init__(self, browser)
