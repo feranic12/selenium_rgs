@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 class OncoProtectB2BLocators:
     Button_Prolongation_False = (
     By.CSS_SELECTOR, "div[data-name=\"content.contract.data.prolongation.is\"] button:first-child")
-    ButtonBuy1 = (By.CSS_SELECTOR, "div.table-responsive > tr:last-child > td(nth-child(2) > button")
+    ButtonBuy1 = (By.CSS_SELECTOR, "div.table-responsive tr:last-child > td:nth-child(2)")
     Surname = (By.NAME, "content.policyHolder.lastName")
     First_Name = (By.NAME, "content.policyHolder.firstName")
     Middle_Name = (By.NAME, "content.policyHolder.middleName")
