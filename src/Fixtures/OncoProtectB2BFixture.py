@@ -9,7 +9,7 @@ from selenium.webdriver.common import action_chains
 import time
 from utils import get_begin_day
 from Fixtures.BaseFixture import BaseFixture
-from Locators.OncoProtectLocators import OncoProtectLocators
+from Locators.OncoProtectB2BLocators import OncoProtectB2BLocators
 
 
 class OncoProtectB2BFixture(BaseFixture):
@@ -23,52 +23,52 @@ class OncoProtectB2BFixture(BaseFixture):
 
     def policy_type(self):
         driver = self.driver
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(OncoProtectLocators.Button_Prolongation_False))
-        element = driver.find_element(*OncoProtectLocators.Button_Prolongation_False)
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(OncoProtectB2BLocators.Button_Prolongation_False))
+        element = driver.find_element(*OncoProtectB2BLocators.Button_Prolongation_False)
         element.click()
 
     def conditions(self):
         driver = self.driver
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(OncoProtectLocators.ButtonBuy1))
-        element = driver.find_element(*OncoProtectLocators.ButtonBuy1)
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(OncoProtectB2BLocators.ButtonBuy1))
+        element = driver.find_element(*OncoProtectB2BLocators.ButtonBuy1)
         element.click()
 
     def insurer(self):
         driver = self.driver
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(OncoProtectLocators.Surname))
-        element = driver.find_element(*OncoProtectLocators.Surname)
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(OncoProtectB2BLocators.Surname))
+        element = driver.find_element(*OncoProtectB2BLocators.Surname)
         element.send_keys("Петров")
-        element = driver.find_element(*OncoProtectLocators.First_Name)
+        element = driver.find_element(*OncoProtectB2BLocators.First_Name)
         element.send_keys("Пётр")
-        element = driver.find_element(*OncoProtectLocators.Middle_Name)
+        element = driver.find_element(*OncoProtectB2BLocators.Middle_Name)
         element.send_keys("Петрович")
-        element = driver.find_element(*OncoProtectLocators.DateOfBirth)
+        element = driver.find_element(*OncoProtectB2BLocators.DateOfBirth)
         element.send_keys("01011990")
-        element = driver.find_element(*OncoProtectLocators.Phone)
+        element = driver.find_element(*OncoProtectB2BLocators.Phone)
         element.send_keys("1231231212")
-        element = driver.find_element(*OncoProtectLocators.Male)
+        element = driver.find_element(*OncoProtectB2BLocators.Male)
         element.click()
-        element = driver.find_element(*OncoProtectLocators.EMail1)
+        element = driver.find_element(*OncoProtectB2BLocators.EMail1)
         element.send_keys("knikitin@avinfors.ru")
-        element = driver.find_element(*OncoProtectLocators.EMail2)
+        element = driver.find_element(*OncoProtectB2BLocators.EMail2)
         element.send_keys("knikitin@avinfors.ru")
-        element = driver.find_element(*OncoProtectLocators.Seria)
+        element = driver.find_element(*OncoProtectB2BLocators.Seria)
         element.send_keys("1234")
-        element = driver.find_element(*OncoProtectLocators.Number)
+        element = driver.find_element(*OncoProtectB2BLocators.Number)
         element.send_keys("123456")
-        element = driver.find_element(*OncoProtectLocators.Continue_Button2)
+        element = driver.find_element(*OncoProtectB2BLocators.Continue_Button2)
         element.click()
 
     def insured(self):
         driver = self.driver
-        WebDriverWait(driver,10).until(EC.element_to_be_clickable(OncoProtectLocators.Is_Insurer))
-        element = driver.find_element(*OncoProtectLocators.Continue_Button3)
+        WebDriverWait(driver,10).until(EC.element_to_be_clickable(OncoProtectB2BLocators.Is_Insurer))
+        element = driver.find_element(*OncoProtectB2BLocators.Continue_Button3)
         element.click()
 
     def agree(self):
         driver = self.driver
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(OncoProtectLocators.Accept_All_Input))
-        element = driver.find_element(*OncoProtectLocators.Accept_All_Input)
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(OncoProtectB2BLocators.Accept_All_Input))
+        element = driver.find_element(*OncoProtectB2BLocators.Accept_All_Input)
         element.click()
 
     def fill_frame(self):

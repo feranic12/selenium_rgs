@@ -8,7 +8,7 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common import action_chains
 import time
 from Fixtures.BaseFixture import BaseFixture
-from Locators.CascoProLocators import CascoProLocators
+from Locators.CascoProB2BLocators import CascoProB2BLocators
 
 
 class CascoProB2BFixture(BaseFixture):
@@ -22,62 +22,62 @@ class CascoProB2BFixture(BaseFixture):
 
     def conditions(self):
         driver = self.driver
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(CascoProLocators.ButtonBuy1))
-        element = driver.find_element(*CascoProLocators.ButtonBuy1)
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(CascoProB2BLocators.ButtonBuy1))
+        element = driver.find_element(*CascoProB2BLocators.ButtonBuy1)
         element.click()
 
     def car_info(self):
         actions = self.actions
         driver = self.driver
-        WebDriverWait(driver,10).until(EC.element_to_be_clickable(CascoProLocators.Maker_Select))
-        maker_select = Select(driver.find_element(*CascoProLocators.Maker_Select))
+        WebDriverWait(driver,10).until(EC.element_to_be_clickable(CascoProB2BLocators.Maker_Select))
+        maker_select = Select(driver.find_element(*CascoProB2BLocators.Maker_Select))
         maker_select.select_by_index(1)
-        model_select = Select(driver.find_element(*CascoProLocators.Model_Select))
+        model_select = Select(driver.find_element(*CascoProB2BLocators.Model_Select))
         model_select.select_by_index(1)
-        element = driver.find_element(*CascoProLocators.VIN)
+        element = driver.find_element(*CascoProB2BLocators.VIN)
         element.send_keys("11111111111111111")
-        element = driver.find_element(*CascoProLocators.Number)
+        element = driver.find_element(*CascoProB2BLocators.Number)
         element.send_keys("А777АА77")
-        element = driver.find_element(*CascoProLocators.Pts_Seria)
+        element = driver.find_element(*CascoProB2BLocators.Pts_Seria)
         element.send_keys("1234")
-        element = driver.find_element(*CascoProLocators.Pts_Number)
+        element = driver.find_element(*CascoProB2BLocators.Pts_Number)
         element.send_keys("123456")
-        element = driver.find_element(*CascoProLocators.Sts_Seria)
+        element = driver.find_element(*CascoProB2BLocators.Sts_Seria)
         element.send_keys("1234")
-        element = driver.find_element(*CascoProLocators.Sts_Number)
+        element = driver.find_element(*CascoProB2BLocators.Sts_Number)
         element.send_keys("123456")
-        element = driver.find_element(*CascoProLocators.Continue_Button)
+        element = driver.find_element(*CascoProB2BLocators.Continue_Button)
         element.click()
 
     def insurer_info(self):
         driver = self.driver
-        element = driver.find_element(*CascoProLocators.LastName)
+        element = driver.find_element(*CascoProB2BLocators.LastName)
         element.send_keys("Петров")
-        element = driver.find_element(*CascoProLocators.FirstName)
+        element = driver.find_element(*CascoProB2BLocators.FirstName)
         element.send_keys("Пётр")
-        element = driver.find_element(*CascoProLocators.MiddleName)
+        element = driver.find_element(*CascoProB2BLocators.MiddleName)
         element.send_keys("Петрович")
-        element = driver.find_element(*CascoProLocators.Dob)
+        element = driver.find_element(*CascoProB2BLocators.Dob)
         element.send_keys("01011990")
-        element = driver.find_element(*CascoProLocators.Phone)
+        element = driver.find_element(*CascoProB2BLocators.Phone)
         element.send_keys("1231231212")
-        element = driver.find_element(*CascoProLocators.Male)
+        element = driver.find_element(*CascoProB2BLocators.Male)
         element.click()
-        element = driver.find_element(*CascoProLocators.Email)
+        element = driver.find_element(*CascoProB2BLocators.Email)
         element.send_keys("knikitin@avinfors.ru")
-        element = driver.find_element(*CascoProLocators.Email2)
+        element = driver.find_element(*CascoProB2BLocators.Email2)
         element.send_keys("knikitin@avinfors.ru")
-        element = driver.find_element(*CascoProLocators.Passport_Seria)
+        element = driver.find_element(*CascoProB2BLocators.Passport_Seria)
         element.send_keys("1234")
-        element = driver.find_element(*CascoProLocators.Passport_Number)
+        element = driver.find_element(*CascoProB2BLocators.Passport_Number)
         element.send_keys("123456")
-        element = driver.find_element(*CascoProLocators.Continue_Button)
+        element = driver.find_element(*CascoProB2BLocators.Continue_Button)
         element.click()
 
     def agree(self):
         driver = self.driver
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable, CascoProLocators.Accept_All_Input)
-        element = driver.find_element(*CascoProLocators.Accept_All_Input)
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable, CascoProB2BLocators.Accept_All_Input)
+        element = driver.find_element(*CascoProB2BLocators.Accept_All_Input)
         element.click()
 
     def fill_frame(self):

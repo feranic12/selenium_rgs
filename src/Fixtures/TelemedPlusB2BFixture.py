@@ -9,12 +9,12 @@ from selenium.webdriver.common import action_chains
 import time
 from utils import get_begin_day
 from Fixtures.BaseFixture import BaseFixture
-from Locators.TelemedPlusLocators import TelemedPlusLocators
+from Locators.TelemedPlusB2BLocators import TelemedPlusB2BLocators
 
 
 class TelemedPlusB2BFixture(BaseFixture):
     def __init__(self, browser):
-        self.target = r"https://test2partner.rgs.ru/b2c/product/build/test-telemedPlusB2B.html"
+        self.target = r"https://testpartner.rgs.ru/b2c/product/build/test-telemedPlusB2B.html"
         BaseFixture.__init__(self, browser)
 
     def open_page(self):
@@ -23,52 +23,52 @@ class TelemedPlusB2BFixture(BaseFixture):
 
     def policy_type(self):
         driver = self.driver
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(TelemedPlusLocators.Button_Prolongation_False))
-        element = driver.find_element(*TelemedPlusLocators.Button_Prolongation_False)
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(TelemedPlusB2BLocators.Button_Prolongation_False))
+        element = driver.find_element(*TelemedPlusB2BLocators.Button_Prolongation_False)
         element.click()
 
     def conditions(self):
         driver = self.driver
-        WebDriverWait(driver,10).until(EC.element_to_be_clickable(TelemedPlusLocators.ButtonBuy1))
-        element = driver.find_element(*TelemedPlusLocators.ButtonBuy1)
+        WebDriverWait(driver,10).until(EC.element_to_be_clickable(TelemedPlusB2BLocators.ButtonBuy1))
+        element = driver.find_element(*TelemedPlusB2BLocators.ButtonBuy1)
         element.click()
 
     def insurer(self):
         driver = self.driver
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(TelemedPlusLocators.Surname))
-        element = driver.find_element(*TelemedPlusLocators.Surname)
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(TelemedPlusB2BLocators.Surname))
+        element = driver.find_element(*TelemedPlusB2BLocators.Surname)
         element.send_keys("Петров")
-        element = driver.find_element(*TelemedPlusLocators.First_Name)
+        element = driver.find_element(*TelemedPlusB2BLocators.First_Name)
         element.send_keys("Пётр")
-        element = driver.find_element(*TelemedPlusLocators.Middle_Name)
+        element = driver.find_element(*TelemedPlusB2BLocators.Middle_Name)
         element.send_keys("Петрович")
-        element = driver.find_element(*TelemedPlusLocators.DateOfBirth)
+        element = driver.find_element(*TelemedPlusB2BLocators.DateOfBirth)
         element.send_keys("01011990")
-        element = driver.find_element(*TelemedPlusLocators.Phone)
+        element = driver.find_element(*TelemedPlusB2BLocators.Phone)
         element.send_keys("1231231212")
-        element = driver.find_element(*TelemedPlusLocators.Male)
+        element = driver.find_element(*TelemedPlusB2BLocators.Male)
         element.click()
-        element = driver.find_element(*TelemedPlusLocators.EMail1)
+        element = driver.find_element(*TelemedPlusB2BLocators.EMail1)
         element.send_keys("knikitin@avinfors.ru")
-        element = driver.find_element(*TelemedPlusLocators.EMail2)
+        element = driver.find_element(*TelemedPlusB2BLocators.EMail2)
         element.send_keys("knikitin@avinfors.ru")
-        element = driver.find_element(*TelemedPlusLocators.Seria)
+        element = driver.find_element(*TelemedPlusB2BLocators.Seria)
         element.send_keys("1234")
-        element = driver.find_element(*TelemedPlusLocators.Number)
+        element = driver.find_element(*TelemedPlusB2BLocators.Number)
         element.send_keys("123456")
-        element = driver.find_element(*TelemedPlusLocators.Continue_Button2)
+        element = driver.find_element(*TelemedPlusB2BLocators.Continue_Button2)
         element.click()
 
     def insured(self):
         driver = self.driver
-        WebDriverWait(driver,10).until(EC.element_to_be_clickable(TelemedPlusLocators.Is_Insurer))
-        element = driver.find_element(*TelemedPlusLocators.Continue_Button3)
+        WebDriverWait(driver,10).until(EC.element_to_be_clickable(TelemedPlusB2BLocators.Is_Insurer))
+        element = driver.find_element(*TelemedPlusB2BLocators.Continue_Button3)
         element.click()
 
     def agree(self):
         driver = self.driver
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(TelemedPlusLocators.Accept_All_Input))
-        element = driver.find_element(*TelemedPlusLocators.Accept_All_Input)
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(TelemedPlusB2BLocators.Accept_All_Input))
+        element = driver.find_element(*TelemedPlusB2BLocators.Accept_All_Input)
         element.click()
 
     def fill_frame(self):

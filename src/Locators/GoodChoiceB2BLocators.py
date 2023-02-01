@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
 
-class GoodChoiceLocators:
+class GoodChoiceB2BLocators:
     Button_Prolongation_False = (By.CSS_SELECTOR, "div[data-name=\"content.contract.data.prolongation.is\"] button:first-child")
     Button1 = (By.CSS_SELECTOR, "div.mt-3 tr:last-child>td:nth-child(2)>button")
     AddressNew1 = (By.NAME, "content.object.data.address.registration.city.full")

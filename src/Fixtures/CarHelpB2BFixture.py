@@ -8,7 +8,7 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common import action_chains
 import time
 from Fixtures.BaseFixture import BaseFixture
-from Locators.CarHelpLocators import CarHelpLocators
+from Locators.CarHelpB2BLocators import CarHelpB2BLocators
 
 
 class CarHelpB2BFixture(BaseFixture):
@@ -22,61 +22,61 @@ class CarHelpB2BFixture(BaseFixture):
 
     def conditions(self):
         driver = self.driver
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(CarHelpLocators.ButtonBuy1))
-        element = driver.find_element(*CarHelpLocators.ButtonBuy1)
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(CarHelpB2BLocators.ButtonBuy1))
+        element = driver.find_element(*CarHelpB2BLocators.ButtonBuy1)
         element.click()
 
     def car_info(self):
         actions = self.actions
         driver = self.driver
-        WebDriverWait(driver,10).until(EC.element_to_be_clickable(CarHelpLocators.Mk))
-        element = driver.find_element(*CarHelpLocators.Mk)
+        WebDriverWait(driver,10).until(EC.element_to_be_clickable(CarHelpB2BLocators.Mk))
+        element = driver.find_element(*CarHelpB2BLocators.Mk)
         element.send_keys("Alfa Romeo"+Keys.ENTER*1000)
-        element = driver.find_element(*CarHelpLocators.Model)
+        element = driver.find_element(*CarHelpB2BLocators.Model)
         element.send_keys("147"+Keys.ENTER*1000)
-        element = driver.find_element(*CarHelpLocators.Year_Of_Issue)
+        element = driver.find_element(*CarHelpB2BLocators.Year_Of_Issue)
         element.click()
         actions.move_by_offset(10,50).click().perform()
-        element = driver.find_element(*CarHelpLocators.VIN)
+        element = driver.find_element(*CarHelpB2BLocators.VIN)
         element.send_keys("11111111111111111")
-        element = driver.find_element(*CarHelpLocators.Number)
+        element = driver.find_element(*CarHelpB2BLocators.Number)
         element.send_keys("А777АА77")
-        element = driver.find_element(*CarHelpLocators.Pts_Seria)
+        element = driver.find_element(*CarHelpB2BLocators.Pts_Seria)
         element.send_keys("1234")
-        element = driver.find_element(*CarHelpLocators.Pts_Number)
+        element = driver.find_element(*CarHelpB2BLocators.Pts_Number)
         element.send_keys("123456")
-        element = driver.find_element(*CarHelpLocators.Continue_Button)
+        element = driver.find_element(*CarHelpB2BLocators.Continue_Button)
         element.click()
         
     def insurer_info(self):
         driver = self.driver
-        element = driver.find_element(*CarHelpLocators.LastName)
+        element = driver.find_element(*CarHelpB2BLocators.LastName)
         element.send_keys("Петров")
-        element = driver.find_element(*CarHelpLocators.FirstName)
+        element = driver.find_element(*CarHelpB2BLocators.FirstName)
         element.send_keys("Пётр")
-        element = driver.find_element(*CarHelpLocators.MiddleName)
+        element = driver.find_element(*CarHelpB2BLocators.MiddleName)
         element.send_keys("Петрович")
-        element = driver.find_element(*CarHelpLocators.Dob)
+        element = driver.find_element(*CarHelpB2BLocators.Dob)
         element.send_keys("01011990")
-        element = driver.find_element(*CarHelpLocators.Phone)
+        element = driver.find_element(*CarHelpB2BLocators.Phone)
         element.send_keys("1231231212")
-        element = driver.find_element(*CarHelpLocators.Male)
+        element = driver.find_element(*CarHelpB2BLocators.Male)
         element.click()
-        element = driver.find_element(*CarHelpLocators.Email)
+        element = driver.find_element(*CarHelpB2BLocators.Email)
         element.send_keys("knikitin@avinfors.ru")
-        element = driver.find_element(*CarHelpLocators.Email2)
+        element = driver.find_element(*CarHelpB2BLocators.Email2)
         element.send_keys("knikitin@avinfors.ru")
-        element = driver.find_element(*CarHelpLocators.Passport_Seria)
+        element = driver.find_element(*CarHelpB2BLocators.Passport_Seria)
         element.send_keys("1234")
-        element = driver.find_element(*CarHelpLocators.Passport_Number)
+        element = driver.find_element(*CarHelpB2BLocators.Passport_Number)
         element.send_keys("123456")
-        element = driver.find_element(*CarHelpLocators.Continue_Button)
+        element = driver.find_element(*CarHelpB2BLocators.Continue_Button)
         element.click()
         
     def agree(self):
         driver = self.driver
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable, CarHelpLocators.Accept_All_Input)
-        element = driver.find_element(*CarHelpLocators.Accept_All_Input)
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable, CarHelpB2BLocators.Accept_All_Input)
+        element = driver.find_element(*CarHelpB2BLocators.Accept_All_Input)
         element.click()
 
     def fill_frame(self):
