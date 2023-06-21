@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 
 class MiteLocators:
     dob1 = (By.NAME, "content.insuredPerson.list[0].dob")
-    button2 = (By.CSS_SELECTOR, "table.n-table-0-2-6 tr:last-child>td:nth-child(2)>button:last-child")
+    button2 = (By.CSS_SELECTOR, "table tr:last-child>td:nth-child(2)>button:last-child")
     #button1 = (By.CSS_SELECTOR, r"table tr:last-child>td:nth-child(2)>button:first-child")
     lastname = (By.NAME, "content.insuredPerson.list[0].lastName")
     firstname = (By.NAME, "content.insuredPerson.list[0].firstName")
