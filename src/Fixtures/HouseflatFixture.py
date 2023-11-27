@@ -14,7 +14,7 @@ from Locators.HouseflatLocators import HouseflatLocators
 
 class HouseflatFixture(BaseFixture):
     def __init__(self, browser):
-        self.target = r"https://testpartner.rgs.ru/b2c/product/build/test-houseflat.html"
+        self.target = r"https://test2partner.rgs.ru/b2c/product/build/test-houseflat.html"
         BaseFixture.__init__(self, browser)
 
     def open_page(self):
@@ -25,8 +25,9 @@ class HouseflatFixture(BaseFixture):
         driver = self.driver
         WebDriverWait(driver, 10).until(EC.element_to_be_clickable(HouseflatLocators.FlatButton))
         driver.find_element(*HouseflatLocators.FlatButton).click()
+        driver.find_element(*HouseflatLocators.BuildingYear).send_keys("1980")
         element = driver.find_element(*HouseflatLocators.AddressNew1)
-        enter_address_new1(element, "г Москва", ActionChains(driver), 300, 500)
+        driver.find_element(*HouseflatLocators.AddressNew1).send_keys("г Москва" + Keys.ENTER)
         driver.find_element(*HouseflatLocators.AddressNew2).send_keys("Площадь Юности, д 34" + Keys.ENTER)
         driver.find_element(*HouseflatLocators.Flat).send_keys("34")
         driver.find_element(*HouseflatLocators.Cadastre).send_keys("123123123")

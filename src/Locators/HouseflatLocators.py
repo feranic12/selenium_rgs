@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 
 class HouseflatLocators:
     FlatButton = (By.CSS_SELECTOR, "div[data-name=\"content.object.data.type\"] button:first-child")
+    BuildingYear = (By.NAME, "content.object.data.buildingYear")
     AddressNew1 = (By.NAME, "content.object.data.address.registration.city.full")
     AddressNew2 = (By.NAME, "content.object.data.address.registration.addressCdi.short")
     Flat = (By.NAME, "content.object.data.address.registration.flat")
