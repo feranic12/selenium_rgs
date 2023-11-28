@@ -74,6 +74,9 @@ def fix(request, scope='session'):
         elif product == "MyStability":
             from Fixtures.MyStabilityFixture import MyStabilityFixture
             fixture = MyStabilityFixture(browser)
+        elif product == "SafeRest":
+            from Fixtures.SafeRestFixture import SafeRestFixture
+            fixture = SafeRestFixture(browser)
     except utils.InvalidLanguageException:
         print("Error! Invalid language of frame specified!")
         return
