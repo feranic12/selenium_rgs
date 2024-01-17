@@ -27,5 +27,10 @@ class MyPetsFixture:
         driver.find_element(*MyPetsLocators.BeginDate).send_keys(get_begin_day(1))
         driver.find_element(*MyPetsLocators.ButtonBuy1).click()
 
+    def calculation(self):
+        driver = self.driver
+
+
     def fill_frame(self):
         self.conditions()
+        self.calculation()
