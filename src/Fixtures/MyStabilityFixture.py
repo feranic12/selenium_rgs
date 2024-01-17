@@ -12,7 +12,7 @@ from Locators.MyStabilityLocators import MyStabilityLocators
 
 class MyStabilityFixture(BaseFixture):
     def __init__(self, browser):
-        self.target = r"https://testpartner.rgs.ru/b2c/product/build/test-myStability.html"
+        self.target = r"https://testpartner.rgs.ru/b2c/product/build/test-myStability.html?p=open"
         BaseFixture.__init__(self, browser)
 
     def open_page(self):

@@ -14,7 +14,7 @@ from Locators.MyHealthPlusB2BLocators import MyHealthPlusB2BLocators
 
 class MyHealthPlusB2BFixture(BaseFixture):
     def __init__(self, browser):
-        self.target = r"https://testpartner.rgs.ru/b2c/product/build/test-MyHealthPlusB2B.html"
+        self.target = r"https://test2partner.rgs.ru/b2c/product/build/test-MyHealthPlusB2B.html"
         BaseFixture.__init__(self, browser)
 
     def open_page(self):

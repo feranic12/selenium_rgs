@@ -14,7 +14,7 @@ from Locators.TelemedPlusB2BLocators import TelemedPlusB2BLocators
 
 class TelemedPlusB2BFixture(BaseFixture):
     def __init__(self, browser):
-        self.target = r"https://testpartner.rgs.ru/b2c/product/build/test-telemedPlusB2B.html"
+        self.target = r"https://test2partner.rgs.ru/b2c/product/build/test-telemedPlusB2B.html?p=artionis"
         BaseFixture.__init__(self, browser)
 
     def open_page(self):
