@@ -29,7 +29,8 @@ class MyPetsFixture:
 
     def calculation(self):
         driver = self.driver
-
+        driver.implicitly_wait(1)
+        driver.find_element(*MyPetsLocators.PetType).click().send_keys(Keys.ENTER).send_keys(Keys.ARROW_DOWN)
 
     def fill_frame(self):
         self.conditions()
