@@ -83,6 +83,9 @@ def fix(request, scope='session'):
         elif product == "MyPets":
             from Fixtures.MyPetsFixture import MyPetsFixture
             fixture = MyPetsFixture(browser)
+        elif product == "HrAdvisor":
+            from Fixtures.HrAdvisorFixture import HrAdvisorFixture
+            fixture = HrAdvisorFixture(browser)
 
     except utils.InvalidLanguageException:
         print("Error! Invalid language of frame specified!")
