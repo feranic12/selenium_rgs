@@ -19,4 +19,4 @@ class HrAdvisorLocators:
     InsuredPersonSex = (By.CSS_SELECTOR, "div[data-name=\"content.insuredPerson.sex\"] button:first-child")
     InsuredPersonPhone = (By.NAME, "content.insuredPerson.phone")
     InsuredPersonEmail = (By.NAME, "content.insuredPerson.email")
-    AcceptAllInput = (By.CSS_SELECTOR, "label[for=\"properties.accept_custom_input\"]")
+    AcceptAllInput = (By.ID, "properties.accept_custom_input")

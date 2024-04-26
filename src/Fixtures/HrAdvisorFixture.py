@@ -26,8 +26,9 @@ class HrAdvisorFixture(BaseFixture):
     def policy_info(self):
         driver = self.driver
         five_days_ago = dt.now() - timedelta(5)
+        this_year = dt.now().strftime("%y")
         driver.find_element(*HrAdvisorLocators.PolicySeria).send_keys("IB903")
-        driver.find_element(*HrAdvisorLocators.PolicyNumber).send_keys("123412324")
+        driver.find_element(*HrAdvisorLocators.PolicyNumber).send_keys("1111222" + this_year)
         driver.find_element(*HrAdvisorLocators.ActivationCode).send_keys("1234")
         driver.find_element(*HrAdvisorLocators.IssueDate).send_keys(five_days_ago.strftime('%d%m%Y'))
 
@@ -58,3 +59,4 @@ class HrAdvisorFixture(BaseFixture):
         self.policy_info()
         self.insurer_info()
         self.insured_info()
+        self.agree()
