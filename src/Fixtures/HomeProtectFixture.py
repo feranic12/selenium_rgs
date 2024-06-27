@@ -46,15 +46,16 @@ class HomeProtectFixture(BaseFixture):
         driver.find_element_by_name("content.policyHolder.middleName").send_keys(u"Петрович")
         driver.find_element_by_name("content.policyHolder.dob").send_keys("01011990")
         driver.find_element_by_name("content.policyHolder.phone").send_keys("1231231212")
-        driver.find_element_by_xpath("(//button[@type='button'])[2]").click()
+        driver.find_element(*HomeProtectLocators.Male).click()
         driver.find_element_by_name("content.policyHolder.email").send_keys("knikitin@avinfors.ru")
         driver.find_element_by_name("content.policyHolder.email2").send_keys("knikitin@avinfors.ru")
-        driver.find_element_by_xpath("//div[@id='RI-product-steps']/div[3]/div/div[2]/div[2]/div").click()
         driver.find_element_by_name("content.policyHolder.document.seria").send_keys("1234")
-        driver.find_element_by_xpath("//div[@id='RI-product-steps']/div[3]/div/div[2]/div[3]/div").click()
         driver.find_element_by_name("content.policyHolder.document.number").send_keys("123123")
-        driver.find_element_by_xpath("(//button[@type='button'])[4]").click()
-
+        driver.find_element_by_name("content.policyHolder.document.doi").send_keys("01.01.2020")
+        driver.find_element_by_name("content.policyHolder.document.issued").send_keys("ОВД")
+        driver.find_element_by_name("content.policyHolder.birthPlace.name").send_keys("Москва")
+        driver.find_element_by_name("content.policyHolder.address.registration.name").send_keys("г Москва, ул Малая Почтовая, д 7")
+        driver.find_element(*HomeProtectLocators.ButtonContinue).click()
     def agree(self):
         driver = self.driver
         WebDriverWait(driver, 10).until(EC.element_to_be_clickable(HomeProtectLocators.AcceptAllInput))
